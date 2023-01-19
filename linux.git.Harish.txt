@@ -1,0 +1,6495 @@
+           SPECIAL LABS - SOURCE BOOK
+           Linux Module 1 – Linux Internals
+
+
+
+
+Revision History:
+First Edition – Nov 2022
+
+
+
+Prepared By:
+Dr P Dhivya                Dr Sangeetha S N        Mr R Sathishkannan
+Ms R Mekala                Dr J Nirmaladevi        Ms M Nithya
+Mr K Balasamy              Mr M Pandiyan           Ms A Abirami
+                           Dr S Lakshmanaprakash
+
+
+
+
+Incharge                   WSTC Coordinator              Dean PDS
+
+                                                                  1|Page
+TRAINING SCHEDULE
+
+
+ Skill Name                   Module 1 Linux Internals
+
+     Day                               Content
+
+    Day 1     Linux Introduction and basic commands
+
+    Day 2     Linux Shell scripting & Logical Structures
+
+    Day 3     Writing, compiling, and executing a C program on Linux
+
+    Day 4     Make files & File Operation
+
+    Day 5     Linux Signals and Handling Signals & Process in Linux
+
+    Day 6     Linux Scheduler & Memory Management
+
+              Multithreading and Interthread communication between
+    Day 7
+              threads
+              Data sharing between multiple processes using IPC
+    Day 8
+              mechanism
+              Linux Networking commands – Developing Client server-
+    Day 9
+              based networking application
+     TP                      Test Project and Assessment
+
+
+
+
+                                                                       2|Page
+      Day 01                           Linux Introduction and basic commands
+
+
+
+Objective:
+
+To impart the knowledge of Linux operating System, evolution, GNU License and installation
+of Linux in the virtual environment.
+
+Outcomes:
+
+To understand the concepts of Linux OS, Linux installation and implements the basic
+commands.
+
+Resources Required             :        Computer system
+
+Safety Precautions             :        Nil
+
+Prerequisites                  :
+
+       •     System Settings
+
+       •     Installation procedures
+
+
+
+Theory:
+
+1. Linux Introduction
+
+Linux is a Unix-like, open source and community-developed operating system (OS) for
+computers, servers, mainframes, mobile devices and embedded devices. It is supported on
+almost every major computer platform, including x86, ARM and SPARC, making it one of the
+most widely supported operating systems.
+
+       The kernel is a computer program at the core of a computer's operating system and
+generally has complete control over everything in the system. It is the portion of the operating
+system code that is always resident in memory and facilitates interactions between hardware
+and software components. A full kernel controls all hardware resources (e.g.,. I/O, memory,
+cryptography) via device drivers, arbitrates conflicts between processes concerning such
+resources, and optimizes the utilization of common resources e.g. CPU & cache usage, file
+systems, and network sockets. On most systems, the kernel is one of the first programs loaded
+on startup (after the bootloader). It handles the rest of startup as well as memory, peripherals,
+
+
+                                                                                      3|Page
+and input/output (I/O) requests from software, translating them into data-processing
+instructions for the central processing unit.
+
+          The GNU General Public License (GNU GPL or simply GPL) is a series of widely used
+free software licenses that guarantee end users the four freedoms to run, study, share, and
+modify the software.[7] The license was the first copyleft for general use and was originally
+written by the founder of the Free Software Foundation (FSF), Richard Stallman, for the GNU
+Project. The license grants the recipients of a computer program the rights of the Free Software
+Definition.[8] These GPL series are all copyleft licenses, which means that any derivative
+woust be distributed under the same or equivalent license terms. It is more restrictive than the
+Lesser General Public License and even further distinct from the more widely used permissive
+software licenses BSD, MIT, and Apache.
+
+
+
+
+        Figure 1.1- Kernel connects application software to the hardware of a computer
+
+
+2. Linux Installation:
+
+Reference Link : https://www.youtube.com/watch?v=mej9mQHWMKE
+
+
+
+3. Linux Commands
+
+a) List
+
+Getting started with Linux basic commands for directory operations, displaying directory
+structure in tree format etc.
+
+1) ls
+
+          list directory contents
+
+
+                                                                                     4|Page
+Output:
+
+
+
+
+SYNOPSIS
+
+ls [OPTION]... [FILE]...
+
+Description:
+
+List information about the FILEs (the current directory by default). Sort entries alphabetically
+if none of -cftuvSUX nor –sort is specified.
+
+Options available for the command
+
+2) ls –l
+
+           use a long listing format
+
+Output:
+
+
+
+
+3) ls -r
+
+           --reverse - reverse order while sorting
+
+Output:
+
+
+
+
+4) ls -R
+
+           --recursive list subdirectories recursively
+
+
+
+
+                                                                                     5|Page
+Output:
+
+
+
+
+5) ls -a
+
+           --all   - do not ignore entries starting with .
+
+
+
+
+b) clear command
+
+clear
+
+           clear the terminal screen
+
+Synopsis
+
+           clear
+
+Description
+
+    •      clear will clears your screen if this is possible, including its scrollback buffer (if the
+           extended "E3" capability is defined).
+
+    •      clear looks in the environment for the terminal type and then in the terminfo database
+           to determine how to clear the screen.
+
+    •      clear ignores any command-line parameters that may be present.
+
+Output:
+
+Before executing command:
+
+
+
+
+                                                                                          6|Page
+After executing command:
+
+
+
+
+c) Make directory command
+
+mkdir
+
+        - make directories
+
+Synopsis
+
+        mkdir [OPTION]... DIRECTORY...
+
+Description
+
+   •    Create the DIRECTORY(ies), if they do not already exist.
+
+   •    Mandatory arguments to long options are mandatory for short options too.
+
+Output:
+
+
+
+
+d) Remove directory command
+
+rmdir
+
+Synopsis
+
+        rmdir [OPTION]... DIRECTORY...
+
+Description
+
+        Remove the DIRECTORY(ies), if they are empty.
+
+Output:
+
+
+
+
+                                                                                   7|Page
+e) Remove files or directories
+
+        rm
+
+Synopsis
+
+        rm [OPTION]... FILE...
+
+Description
+
+This manual page documents the GNU version of rm. rm removes each specified file. By
+default, it does not remove directories.
+
+Output:
+
+
+
+
+f) Changing Timestamp
+
+touch
+
+        - change file timestamps
+
+Synopsis
+
+        touch [OPTION]... FILE...
+
+Description
+
+   •    Update the access and modification times of each FILE to the current time.
+
+   •    A FILE argument that does not exist is created empty, unless -c or -h is supplied.
+
+   •    A FILE argument string of - is handled specially and causes touch to change the
+        times of the file associated with standard output.
+
+Output:
+
+
+
+
+                                                                                     8|Page
+g) Changing the directory
+
+cd <directory name>
+
+cd command will allow you to change directories. When you open a terminal you will be in
+your home directory.
+
+One of the most used commands of Ubuntu; you can change the directories in the terminal
+using the “cd” command. For instance, the following command will change the pwd to desktop.
+
+Output:
+
+
+
+
+There are multiple uses of this command: one can change the present directory to root directory
+or home directory using this command. When you open a fresh terminal, you are in the home
+directory.
+
+To change directory to root. For instance, we are in the Desktop directory and want to switch
+to the root directory:
+
+
+
+
+h) Command to know the present working directory
+
+pwd
+
+        -- present working directory
+
+Output:
+
+
+
+
+i) cat command
+
+cat
+
+        -- concatenate files and print on the standard output
+
+cat <filename>
+
+        To view file content in terminal
+
+                                                                                    9|Page
+cat > filename concatenates contents typed in terminal to already existing file or newly created
+file with name "filename"
+
+Description
+
+Concatenate FILE(s), or standard input, to standard output.
+
+                                           Output:
+
+
+
+
+Or you can use this command to save the content of multiples files to one file:
+
+
+
+
+j) cp command
+
+cp
+
+         -- copy files and directories
+
+Synopsis
+
+         cp [OPTION]... [-T] SOURCE DEST
+
+                cp [OPTION]... SOURCE... DIRECTORY
+
+         cp [OPTION]... -t DIRECTORY SOURCE...
+
+Description
+
+     •   Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+     •   Mandatory arguments to long options are mandatory for short options too.
+
+Output:
+
+
+
+
+                                                                                    10 | P a g e
+k) Renaming the files
+
+rename
+
+         -- rename files
+
+Synopsis
+
+         rename [options] expression replacement file...
+
+Description
+
+rename will rename the specified files by replacing the first occurrence of expression in their
+name by replacement.
+
+Options
+
+ -s, --symlink
+
+         Do not rename a symlink but its target.
+
+ -v, --verbose
+
+         Show which files where renamed, if any.
+
+ -n, --no-act
+
+         Do not make any changes.
+
+ -V, --version
+
+         Display version information and exit.
+
+ -h, --help
+
+         Display help text and exit.
+
+Output:
+
+
+
+
+                                                                                    11 | P a g e
+Schedule:
+
+ Da      8:45        9:35     10:25      10:40   11:30    12:20       1:30 2:20 3:10
+                                                                                          3:25 pm
+ y/     am to       am to     am to      am to   am to    pm to      pm to pm to pm to
+                                                                                             to
+ Ti     9:35a       10:25     10:40      11:30   12:20    1:30p      2:20p 3:10p 3:25p
+                                                                                          4:15pm
+ me       m           am       am         am      pm        m          m     m     m
+
+                                         Implementation        Implementati        Task
+        Introduction-          Tea                       Lunch               Tea
+ 01                                       of Basic Linux        on of basic       Assessm
+          to Linux            Break                      Break              Break
+                                            Commands            commands            ent
+
+
+
+Description of the task:
+
+Task1: Installation of Linux in virtual environment
+
+Task 2: Execution of basic commands in Linux
+
+Assessment Pattern:
+
+           Aspect
+  Sl.                                                  Extra aspect of    Requirement     Max.
+           Type             Aspect of description
+  No.                                                   description       (only for M)    marks
+          (M or J)
+                            List      files      and       Yes - 1
+  1             J                                                              -             1
+                            directories                    No - 0
+                                                           Yes - 1                           1
+  2             J           Sorting the files                                  -
+                                                           No - 0
+                                                           Yes - 1                           1
+                J           Clear the entries                                  -
+                                                           No - 0
+                                                           Yes - 1                           1
+                J           Make directories                                   -
+                                                           No - 0
+                                                           Yes - 1                           1
+                J           Remove files                                       -
+                                                           No - 0
+                                                           Yes - 1                           1
+                J           Remove directories                                 -
+                                                           No - 0
+                J                                          Yes - 1                           1
+                            Change the directories                             -
+                                                           No - 0
+                J                                          Yes - 1                           1
+                            Copy files                                         -
+                                                           No - 0
+                J                                          Yes - 1                           1
+                            Copy directories                                   -
+                                                           No - 0
+                J                                          Yes - 1                           1
+                            Rename files                                       -
+                                                           No - 0
+                                          Total Marks                                        10
+
+
+
+                                                                                         12 | P a g e
+      Day 02                         Linux Shell scripting & Logical Structures
+
+
+Objective:
+
+To understand the concepts of basic shell scripting using variable, operators, command line
+arguments and control statements.
+
+Outcomes:
+
+To implement the shell scripting using variables, operators, CLA, looping and control
+statements.
+
+Resources Required             :       Linux Virtual environment
+
+Safety Precautions             :       Nil
+
+Prerequisites:
+
+        •     Basic shell commands
+
+        •     Dir & File Commands
+
+        •     System Commands
+
+        •     Misc Commands
+
+
+
+Theory:
+
+Reference Link:
+
+Shell Scripting is an open-source computer program designed to be run by the Unix/Linux
+shell. Shell Scripting is a program to write a series of commands for the shell to execute. It can
+combine lengthy and repetitive sequences of commands into a single and simple script that can
+be stored and executed anytime which, reduces programming efforts.
+
+        Shell is a UNIX term for an interface between a user and an operating system service.
+Shell provides users with an interface and accepts human-readable commands into the system
+and executes those commands which can run automatically and give the program’s output in a
+shell script.
+
+        An Operating is made of many components, but its two prime components are Kernel
+and Shell.
+
+
+                                                                                      13 | P a g e
+                          Figure 2.1- Components of Shell Program
+
+
+
+A Kernel is at the nucleus of a computer. It makes the communication between the hardware
+and software possible. While the Kernel is the innermost part of an operating system, a shell is
+the outermost one. A shell in a Linux operating system takes input from you in the form of
+commands, processes it, and then gives an output. It is the interface through which a user works
+on the programs, commands, and scripts. A shell is accessed by a terminal which runs it.
+
+When you run the terminal, the Shell issues a command prompt (usually $), where you can
+type your input, which is then executed when you hit the Enter key. The output or the result is
+thereafter displayed on the terminal. The Shell wraps around the delicate interior of an
+Operating system protecting it from accidental damage. Hence the name Shell.
+
+Types of Shell
+
+There are two main shells in Linux:
+
+1. The Bourne Shell: The prompt for this shell is $ and its derivatives are listed below:
+
+   •   POSIX shell also is known as sh
+
+   •   Korn Shell also knew as sh
+
+   •   Bourne Again SHell also knew as bash (most popular)
+
+2. The C shell: The prompt for this shell is %, and its subcategories are:
+
+   •   C shell also is known as csh
+
+   •   Tops C shell also is known as tcsh
+
+Write Shell Script in Linux/Unix
+
+Shell Scripts are written using text editors. On your Linux system, open a text editor program,
+open a new file to begin typing a shell script or shell programming, then give the shell
+
+                                                                                     14 | P a g e
+permission to execute your shell script and put your script at the location from where the shell
+can find it.
+
+Steps to write a shell script
+
+     •   Create a file using a vi editor(or any other editor). Name script file with extension .sh
+
+     •   Start the script with #! /bin/sh
+
+     •   Write some code.
+
+     •   Save the script file as filename.sh
+
+     •   For executing the script type bash filename.sh
+
+     •   “#!” is an operator called shebang which directs the script to the interpreter location.
+         we use”#! /bin/sh” the script gets directed to the bourne-shell.
+
+               o   #!/bin/sh
+
+               o   ls
+
+
+
+
+                        Figure 2.2- Steps to Create Shell Script in Linux/Unix
+
+Adding shell comments
+
+Commenting is important in any program. In Shell programming, the syntax to add a comment
+is
+
+         #comment
+
+Shell Variables
+
+Variables store data in the form of characters and numbers. Similarly, Shell variables are used
+to store information and they can by the shell only.
+
+                                                                                       15 | P a g e
+For example, the following creates a shell variable and then prints it:
+
+       variable ="Hello"
+
+       echo $variable
+
+Example:
+
+#!/bin/sh
+
+echo "what is your name?"
+
+read name
+
+echo "How do you do, $name?"
+
+read remark
+
+echo "I am $remark too!"
+
+
+
+
+                        Figure 2.3- Steps to create and execute the script
+
+
+
+
+                                                                             16 | P a g e
+I. BASIC OPERATORS IN SHELL SCRIPTING
+
+There are 5 basic operators in bash/shell scripting:
+
+    1.   Arithmetic Operators
+
+    2.   Relational Operators
+
+    3.   Boolean Operators
+
+    4.   Bitwise Operators
+
+    5.   File Test Operators
+
+
+
+1. Arithmetic Operators:
+
+These operators are used to perform normal arithmetic /mathematical operations. There are 7
+arithmetic operators:
+
+    •    Addition (+): Binary operation used to add two operands.
+
+    •    Subtraction (-): Binary operation used to subtract two operands.
+
+    •    Multiplication (*): Binary operation used to multiply two operands.
+
+    •    Division (/): Binary operation used to divide two operands.
+
+    •    Modulus (%): Binary operation used to find remainder of two operands.
+
+    •    Increment Operator (++): Unary operator used to increase the value of operand by
+         one.
+
+    •    Decrement Operator (- -): Unary operator used to decrease the value of a operand by
+         one
+
+Program:
+
+#!/bin/bash
+
+#reading data from the user
+
+read - p 'Enter a : ' a
+
+read - p 'Enter b : ' b
+
+add = $((a + b))
+
+echo Addition of a and b are $add
+
+                                                                                  17 | P a g e
+sub = $((a - b))
+
+echo Subtraction of a and b are $sub
+
+mul = $((a * b))
+
+echo Multiplication of a and b are $mul
+
+div = $((a / b))
+
+echo division of a and b are $div
+
+mod = $((a % b))
+
+echo Modulus of a and b are $mod((++a))
+
+echo Increment operator when applied on "a" results into a = $a((--b))
+
+echo Decrement operator when applied on "b" results into b = $b
+
+Output:
+
+
+
+
+                                    Figure 2.4- Sample Output
+
+2. Relational Operators:
+
+Relational operators are those operators which define the relation between two operands.
+They give either true or false depending upon the relation.
+
+They are of 6 types:
+
+‘==’ Operator: Double equal to operator compares the two operands. Its returns true is they are
+equal otherwise returns false.
+
+‘!=’ Operator: Not Equal to operator return true if the two operands are not equal otherwise it
+returns false.
+
+                                                                                   18 | P a g e
+‘<‘ Operator: Less than operator returns true if first operand is less than second operand
+otherwise returns false.
+
+‘<=’ Operator: Less than or equal to operator returns true if first operand is less than or equal
+to second operand otherwise returns false
+
+‘>’ Operator: Greater than operator return true if the first operand is greater than the second
+operand otherwise return false.
+
+‘>=’ Operator: Greater than or equal to operator returns true if first operand is greater than or
+equal to second operand otherwise returns false
+
+Program:
+
+#!/bin/bash
+
+#reading data from the user
+
+read -p 'Enter a : ' a
+
+read -p 'Enter b : ' b
+
+if(( $a==$b ))
+
+then
+
+     echo a is equal to b.
+
+else
+
+     echo a is not equal to b.
+
+fi
+
+if(( $a!=$b ))
+
+then
+
+     echo a is not equal to b.
+
+else
+
+     echo a is equal to b.
+
+fi
+
+if(( $a<$b ))
+
+then
+
+
+                                                                                     19 | P a g e
+     echo a is less than b.
+
+else
+
+     echo a is not less than b.
+
+fi
+
+if(( $a<=$b ))
+
+then
+
+     echo a is less than or equal to b.
+
+else
+
+     echo a is not less than or equal to b.
+
+fi
+
+if(( $a>$b ))
+
+then
+
+     echo a is greater than b.
+
+else
+
+     echo a is not greater than b.
+
+fi
+
+if(( $a>=$b ))
+
+then
+
+     echo a is greater than or equal to b.
+
+else
+
+     echo a is not greater than or equal to b.
+
+fi
+
+
+
+
+                                                 20 | P a g e
+Output:
+
+
+
+
+                                   Figure 2.5- Sample Output
+
+3. Logical Operators:
+
+They are also known as Boolean operators. These are used to perform logical operations. They
+are of 3 types:
+
+Logical AND (&&):
+
+This is a binary operator, which returns true if both the operands are true otherwise returns
+false.
+
+Logical OR (||):
+
+This is a binary operator, which returns true is either of the operand is true or both the
+operands are true and return false if none of then is false.
+
+Not Equal to (!):
+
+This is a unary operator which returns true if the operand is false and returns false if the
+operand is true.
+
+Program:
+
+#!/bin/bash
+
+#reading data from the user
+
+read -p 'Enter a : ' a
+
+read -p 'Enter b : ' b
+
+if(($a == "true" & $b == "true" ))
+
+
+                                                                                      21 | P a g e
+then
+
+     echo Both are true.
+
+else
+
+     echo Both are not true.
+
+fi
+
+if(($a == "true" || $b == "true" ))
+
+then
+
+     echo Atleast one of them is true.
+
+else
+
+     echo None of them is true.
+
+fi
+
+if(( ! $a == "true" ))
+
+then
+
+     echo "a" was initially false.
+
+else
+
+     echo "a" was initially true.
+
+fi
+
+
+
+
+                                      Figure 2.6 - Sample Output
+
+4. Bitwise Operators:
+
+A bitwise operator is an operator used to perform bitwise operations on bit patterns. They are
+of 6 types:
+
+                                                                                   22 | P a g e
+Bitwise And (&):
+
+Bitwise & operator performs binary AND operation bit by bit on the operands.
+
+Bitwise OR (|):
+
+Bitwise | operator performs binary OR operation bit by bit on the operands.
+
+Bitwise XOR (^):
+
+Bitwise ^ operator performs binary XOR operation bit by bit on the operands.
+
+Bitwise complement (~):
+
+Bitwise ~ operator performs binary NOT operation bit by bit on the operand.
+
+Left Shift (<<):
+
+This operator shifts the bits of the left operand to left by number of times specified by right
+operand.
+
+Right Shift (>>):
+
+This operator shifts the bits of the left operand to right by number of times specified by right
+operand.
+
+Program:
+
+#!/bin/bash
+
+#reading data from the user
+
+read -p 'Enter a : ' a
+
+read -p 'Enter b : ' b
+
+bitwiseAND=$(( a&b ))
+
+echo Bitwise AND of a and b is $bitwiseAND
+
+bitwiseOR=$(( a|b ))
+
+echo Bitwise OR of a and b is $bitwiseOR
+
+bitwiseXOR=$(( a^b ))
+
+echo Bitwise XOR of a and b is $bitwiseXOR
+
+bitiwiseComplement=$(( ~a ))
+
+echo Bitwise Compliment of a is $bitiwiseComplement
+
+                                                                                      23 | P a g e
+leftshift=$(( a<<1 ))
+
+echo Left Shift of a is $leftshift
+
+rightshift=$(( b>>1 ))
+
+echo Right Shift of b is $rightshift
+
+
+
+
+                                     Figure 2.7 - Sample Output
+
+5. File Test Operator:
+
+These operators are used to test a particular property of a file.
+
+-b operator:
+
+This operator check whether a file is a block special file or not. It returns true if the file is a
+block special file otherwise false.
+
+-c operator:
+
+This operator checks whether a file is a character special file or not. It returns true if it is a
+character special file otherwise false.
+
+-d operator:
+
+This operator checks if the given directory exists or not. If it exists then operators return true
+otherwise false.
+
+-e operator:
+
+This operator checks whether the given file exists or not. If it exits this operator returns true
+otherwise false.
+
+
+                                                                                       24 | P a g e
+-r operator:
+
+This operator checks whether the given file has read access or not. If it has read access then it
+returns true otherwise false.
+
+-w operator:
+
+This operator checks whether the given file has written access or not. If it has written then it
+returns true otherwise false.
+
+-x operator:
+
+This operator checks whether the given file has executed access or not. If it has executed access
+then it returns true otherwise false.
+
+-s operator:
+
+This operator checks the size of the given file. If the size of given file is greater than 0 then it
+returns true otherwise it is false.
+
+Program:
+
+#!/bin/bash
+
+#reading data from the user
+
+read -p 'Enter file name : ' FileName
+
+if [ -e $FileName ]
+
+then
+
+     echo File Exist
+
+else
+
+     echo File doesnot exist
+
+fi
+
+if [ -s $FileName ]
+
+then
+
+     echo The given file is not empty.
+
+else
+
+     echo The given file is empty.
+
+
+                                                                                        25 | P a g e
+fi
+
+if [ -r $FileName ]
+
+then
+
+     echo The given file has read access.
+
+else
+
+     echo The given file does not has read access.
+
+fi
+
+if [ -w $FileName ]
+
+then
+
+     echo The given file has write access.
+
+else
+
+     echo The given file does not has write access.
+
+fi
+
+if [ -x $FileName ]
+
+then
+
+     echo The given file has execute access.
+
+else
+
+     echo The given file does not has execute access.
+
+fi
+
+
+
+
+                                   Figure 2.8 - Sample Output
+
+                                                                26 | P a g e
+II. COMMAND LINE ARGUMENTS IN UNIX SHELL SCRIPT
+
+The UNIX shell is used to run commands, and it allows users to pass run time arguments to
+these commands. These arguments, also known as command line parameters that allows the
+users to either control the flow of the command or to specify the input data for the command.
+
+           $ sh hello how to do you do
+
+Here $0 would be assigned sh
+
+           $1 would be assigned hello
+
+           $2 would be assigned how
+
+1. set
+
+           $ set how do you do
+
+           $ echo $1 $2
+
+           how do
+
+2. shift
+
+           $ set hello good morning how do you do welcome to UNIX tutorial.
+
+Here, ‘hello’ is assigned to $1, ‘good’ to $2 and so on to ‘to’ being assigned to $9. Now the
+shift command can be used to shift the parameters ‘N’ places.
+
+Code:
+
+           $ shift 2
+
+           $ echo $1
+
+Now $1 will be ‘morning’ and so on to $8 being ‘unix’ and $9 being ‘tutorial’.
+
+III. Decision making statements:
+
+Unix Shell supports conditional statements which are used to perform different actions based
+on different conditions.
+
+    •      The if...else statement
+
+    •      The case...esac statement
+
+
+
+
+                                                                                   27 | P a g e
+1. The if...else statements
+
+If else statements are useful decision-making statements which can be used to select an option
+from a given set of options.
+
+Unix Shell supports following forms of if…else statement
+
+     •   if...fi statement
+
+     •   if...else...fi statement
+
+     •   if...elif...else...fi statement
+
+The if...fi statement is the fundamental control statement that allows Shell to make decisions
+and execute statements conditionally.
+
+Program:
+
+#!/bin/sh
+
+a=10
+
+b=20
+
+if [ $a == $b ]
+
+then
+
+         echo "a is equal to b"
+
+fi
+
+if [ $a != $b ]
+
+then
+
+         echo "a is not equal to b"
+
+fi
+
+Output:
+
+a is not equal to b
+
+
+
+
+                                                                                   28 | P a g e
+The if...else...fi statement is the next form of control statement that allows Shell to execute
+statements in a controlled way and make the right choice.
+
+Program:
+
+#!/bin/sh
+
+a=10
+
+b=20
+
+
+
+if [ $a == $b ]
+
+then
+
+        echo "a is equal to b"
+
+else
+
+        echo "a is not equal to b"
+
+fi
+
+Output:
+
+a is not equal to b
+
+
+
+The if...elif...fi statement is the one level advance form of control statement that allows Shell
+to make correct decision out of several conditions.
+
+Program:
+
+#!/bin/sh
+
+a=10
+
+b=20
+
+
+
+if [ $a == $b ]
+
+then
+
+        echo "a is equal to b"
+
+elif [ $a -gt $b ]
+
+                                                                                      29 | P a g e
+then
+
+          echo "a is greater than b"
+
+elif [ $a -lt $b ]
+
+then
+
+          echo "a is less than b"
+
+else
+
+          echo "None of the condition met"
+
+fi
+
+Output:
+
+a is less than b
+
+
+
+2. The case...esac Statement
+
+You can use multiple if...elif statements to perform a multiway branch. However, this is not
+always the best solution, especially when all of the branches depend on the value of a single
+variable.Unix Shell supports case...esac statement which handles exactly this situation, and it
+does so more efficiently than repeated if...elif statements.
+
+Program:
+
+#!/bin/sh
+
+FRUIT="kiwi"
+
+case "$FRUIT" in
+
+     "apple") echo "Apple pie is quite tasty."
+
+     ;;
+
+     "banana") echo "I like banana nut bread."
+
+     ;;
+
+     "kiwi") echo "New Zealand is famous for kiwi."
+
+     ;;
+
+esac
+
+                                                                                    30 | P a g e
+Output:
+
+New Zealand is famous for kiwi.
+
+
+
+IV. LOOPING STRUCTURES
+
+A loop is a powerful programming tool that enables you to execute a set of commands
+repeatedly. In this chapter, we will examine the following types of loops available to shell
+programmers.
+
+       1. The while loop
+
+       2. The for loop
+
+       3. The until loop
+
+       4. The select loop
+
+For example, the while loop executes the given commands until the given condition remains
+true; the until loop executes until a given condition becomes true.
+
+
+
+1. while Loops
+
+Program 1:
+
+#!/bin/sh
+
+a=0
+
+while [ "$a" -lt 10 ] # this is loop1
+
+       do
+
+               b="$a"
+
+while [ "$b" -ge 0 ] # this is loop2
+
+       do
+
+               echo -n "$b "
+
+               b=`expr $b - 1`
+
+       done
+
+       echo
+
+                                                                                31 | P a g e
+        a=`expr $a + 1`
+
+        done
+
+This will produce the following result. It is important to note how echo -n works here. Here -
+n option lets echo avoid printing a new line character.
+
+Output:
+
+0
+
+10
+
+210
+
+3210
+
+43210
+
+543210
+
+6543210
+
+76543210
+
+876543210
+
+9876543210
+
+The for loop operates on lists of items. It repeats a set of commands for every item in a list.
+
+Program 2:
+
+#!/bin/sh
+
+for var in 0 1 2 3 4 5 6 7 8 9
+
+do
+
+        echo $var
+
+done
+
+Upon execution, you will receive the following result −
+
+0
+
+1
+
+2
+
+
+                                                                                     32 | P a g e
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+The while loop is perfect for a situation where you need to execute a set of commands while
+some condition is true. Sometimes you need to execute a set of commands until a condition is
+true.
+
+Program 3:
+
+#!/bin/sh
+
+a=0
+
+until [! $a -lt 10]
+
+do
+
+        echo $a
+
+        a=`expr $a + 1`
+
+done
+
+Output:
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+                                                                                 33 | P a g e
+8
+
+9
+
+
+
+2. The select Loop
+
+The select loop provides an easy way to create a numbered menu from which users can select
+options. It is useful when you need to ask the user to choose one or more items from a list of
+choices.
+
+Here var is the name of a variable and word1 to wordN are sequences of characters separated
+by spaces (words). Each time the for loop executes, the value of the variable var is set to the
+next word in the list of words, word1 to wordN. For every selection, a set of commands will be
+executed within the loop. This loop was introduced in ksh and has been adapted into bash. It is
+not available in sh.
+
+Program:
+
+#!/bin/ksh
+
+select DRINK in tea cofee water juice appe all none
+
+do
+
+        case $DRINK in
+
+                tea|cofee|water|all)
+
+                         echo "Go to canteen"
+
+                         ;;
+
+                juice|appe)
+
+                         echo "Available at home"
+
+                ;;
+
+                none)
+
+                         break
+
+                ;;
+
+                *) echo "ERROR: Invalid selection"
+
+                ;;
+
+        esac
+
+done
+
+
+                                                                                    34 | P a g e
+The menu presented by the select loop looks like the following −
+
+$./test.sh
+
+1) tea
+
+2) cofee
+
+3) water
+
+4) juice
+
+5) appe
+
+6) all
+
+7) none
+
+#? juice
+
+Available at home
+
+#? none
+
+$
+
+
+
+V. SHELL LOOP CONTROL
+
+All the loops have a limited life and they come out once the condition is false or true depending
+on the loop.A loop may continue forever if the required condition is not met. A loop that
+executes forever without terminating executes for an infinite number of times. For this reason,
+such loops are called infinite loops.
+
+Program:
+
+#!/bin/sh
+
+a=10
+
+until [ $a -lt 10 ]
+
+do
+
+          echo $a
+
+          a=`expr $a + 1`
+
+done
+
+                                                                                     35 | P a g e
+1. The break Statement
+
+The break statement is used to terminate the execution of the entire loop, after completing the
+execution of all of the lines of code up to the break statement. It then steps down to the code
+following the end of the loop.
+
+Program:
+
+#!/bin/sh
+
+a=0
+
+while [ $a -lt 10 ]
+
+do
+
+        echo $a
+
+        if [ $a -eq 5 ]
+
+        then
+
+                break
+
+        fi
+
+        a=`expr $a + 1`
+
+done
+
+Upon execution, you will receive the following result −
+
+0
+
+1
+
+2
+
+3
+
+4
+
+5
+
+2. The continue statement
+
+The continue statement is similar to the break command, except that it causes the current
+iteration of the loop to exit, rather than the entire loop. This statement is useful when an error
+has occurred but you want to try to execute the next iteration of the loop.
+
+                                                                                      36 | P a g e
+Program:
+
+#!/bin/sh
+
+NUMS="1 2 3 4 5 6 7"
+
+for NUM in $NUMS
+
+do
+
+       Q=`expr $NUM % 2`
+
+       if [ $Q -eq 0 ]
+
+       then
+
+               echo "Number is an even number!!"
+
+               continue
+
+       fi
+
+       echo "Found odd number"
+
+done
+
+Output:
+
+Found odd number
+
+Number is an even number!!
+
+Found odd number
+
+Number is an even number!!
+
+Found odd number
+
+Number is an even number!!
+
+Found odd number
+
+
+
+
+                                                   37 | P a g e
+Schedule:
+
+          8:45                                                  1:30 2:20
+               9:35am         10:40 11:30              12:20                 3:10       3:25
+           am          10:25                                     pm pm
+ Day/             to          am to am to              pm to                pm to      pm to
+           to          am to                                      to  to
+ Time           10:25         11:30 12:20               1:30                 3:25       4:15
+          9:35        10:40am                                   2:20 3:10
+                 am            am    pm                  pm                   pm         pm
+           am                                                    pm pm
+
+           Basic shell
+                                       Operators in                                     Task
+            scripting         Tea                     Lunch   Control        Tea
+  02                                      Shell                                         Asses
+              using          Break                    Break statements      Break
+                                        scripting                                      -sment
+            variable
+
+
+Description of the task:
+
+Task 1: Write a program to perform the addition, subtraction, multiplication and division.
+
+Task 2: Write a Shell script to find factorial of a given integer.
+
+Task 3: Write a script to find sum of total salary of all employees.
+
+Task 4: Write a program to select DRINK in tea, coffee, water, juice and apple.
+
+Task 5: Write a program to verify whether the given two numbers is equal or not.
+
+
+Assessment Pattern:
+
+        Aspect
+ Sl.    Type              Aspect of           Extra aspect of          Requirement     Max.
+ No.    (M or            description           description             (only for M)    marks
+          J)
+                  Creation of new                  Yes - 1
+  1.       J                                                                -             1
+                  script file                      No - 0
+                  Implementation of
+                                                   Yes - 1
+  2.       J      Arithmetic                                                -             1
+                                                   No - 0
+                  Operators
+                  Implementation of
+                                                   Yes - 1
+  3.       J      Relational                                                -             1
+                                                   No - 0
+                  Operators
+                                      If Yes, then
+                                      a. Logical operators are
+                  Implementation of
+                                      used- 0.5
+  4.       J      Logical and Bitwise                                       -             1
+                                      b. Logical operators is
+                  Operators
+                                      used- 0.5
+                                      No - 0
+
+
+
+
+                                                                                    38 | P a g e
+          Shows the result of
+                                           Yes - 1
+5.    J   Command Line                                         -         1
+                                           No - 0
+          Arguments
+          Implementation of
+          Shell script to find             Yes - 1
+6.    J                                                        -         1
+          factorial of a given             No - 0
+          integer
+          Use of
+                                           Yes - 1
+7.    J   if...elif...else...fi                                -         1
+                                           No - 0
+          statement
+                                   If yes, then
+                                   a. While loop is used –
+          Implementation of        0.25
+          looping                  b. for loop is used –
+             • While               0.25
+8.    J                                                        -         1
+             • For                 c. Until loop is used –
+             • Until               0.25
+             • select              d. Select loop is used –
+                                   0.25
+                                   No - 0
+                                   If yes, then
+                                   a. The break statement is
+                                   used – 0.5
+          Implementation of
+9.    J                            b.                          -         1
+          shell loop control.
+                                   The continue statement
+                                   is used – 0.5
+                                   No - 0
+          Script to find sum
+                                           Yes - 1
+10.   J   of total salary of all                               -         1
+                                           No - 0
+          employees
+                            Total Marks                                 10
+
+
+
+
+                                                                   39 | P a g e
+     Day 03               Writing, compiling, and executing a C program on Linux
+
+
+
+Objective
+
+The aim of the task is to write, compile and execute a C program on LINUX.
+
+Outcome
+
+Students will be able to apply the C programming concepts in Linux Platform.
+
+Resources Required           :       LINUX Platform
+
+Safety Precautions           :       Nil
+
+Prerequisites                :       Knowledge about C- Programming Language
+
+
+
+Theory:
+
+C Programming language is a well-known programming language because of its rich library of
+functions. C program does not execute without a compiler in Linux. Therefore, a dedicated
+compiler is needed to compile programming languages in Linux distribution. In this session,
+we will learn what C programming is and how it is used to compile C programs in Linux.
+
+Modes of Text Editor:
+
+https://docs.google.com/document/d/1uJsjUUNTxABJ-O7_xcA-
+H8NEUhhwK72BfeSvkohe7rI/edit?usp=sharing
+https://www.javatpoint.com/linux-text-
+editors#:~:text=There%20are%20two%20types%20of,)%2C%20Kwrite%2C%20and%20mo
+re
+Writing a C program in Linux using vi editor:
+https://docs.google.com/document/d/1r8PT8oh3OjBdJcWzNGKj7GgZV09xcETEtkUMLYS
+z-rY/edit?usp=sharing
+https://www.scaler.com/topics/c/how-to-compile-c-program-in-linux/
+https://vitux.com/how-to-write-and-run-a-c-program-in-linux/
+
+
+Regular steps
+
+1. Connect to Linux server using telnet 172.16.22.5
+
+2. Enter your login and passwd.
+
+
+                                                                               40 | P a g e
+3. Type ls to verify your directory name.
+
+4. To enter your first-year directory cd directory name.
+
+5. vi filename.c - opens the editor with the name given.
+
+6. Esc i for typing source code. Save it with Esc: wq
+
+7. cc filename.c (or) gcc filename.c- to compile the file
+
+8. a.out (or) ./a.out (or) to get the output.
+
+
+
+C Programs:
+
+Program 1:      Print Hello World
+
+In the command mode, open the editor file with name hello.c by using the following command.
+
+$vi hello.c
+
+Type the following program by pressing ‘i’ to change into the insert mode
+
+
+
+
+To save and quit        :        Press Esc: wq
+
+To compile              :        $ cc hello.c
+
+To Execute              :        $ ./a.out
+
+Hello World
+
+
+
+Program 2:      Read user input
+
+                                                                               41 | P a g e
+#include <stdio.h>
+
+int main()
+
+{
+
+       char name[100];
+
+       int age;
+
+       printf("Enter your name: ");
+
+       scanf("%s",name);
+
+       printf("Enter your age: ");
+
+       scanf("%d",&age);
+
+       printf("Hello, %s,You are %d years old", name, age);
+
+}
+
+Output:
+
+Enter your name: Riyaan
+
+Enter your age: 23
+
+Hello, Ryanoid are 23 years old
+
+
+
+Program 3:        Read command-line arguments
+
+#include <stdio.h>
+int main(int argc,char* argv[])
+
+{
+
+       printf("Total number of arguments = %d\n",argc);
+       printf("Argument No. 1 = %s\n",argv[0]);
+
+       printf("Argument No. 2 = %s\n",argv[1]);
+       printf("Argument No. 3 = %s\n",argv[2]);
+
+}
+
+Output:
+
+Total number of arguments = 1
+
+                                                              42 | P a g e
+Argument No. 1 = /tmp/uawjnLp746.o
+
+Argument No. 2 = (null)
+
+Argument No. 3 = KUBERNETES_SERVICE_PORT=443
+
+
+
+Program 4:     Compare string using conditional statements
+
+#include <stdio.h>
+#include <string.h>
+int main()
+
+{
+
+       int n1, n2, result;
+       char operator[10];
+       printf("Enter first number :");
+       scanf("%d",&n1);
+       printf("Enter second number :");
+       scanf("%d",&n2);
+       printf("Enter operation name :");
+       scanf("%s",operator);
+       if(strcmp(operator,"add") == 0)
+
+               result = n1 + n2;
+
+       else if(strcmp(operator,"sub") == 0)
+
+               result = n1 - n2;
+       else
+
+               result=0;
+               printf("The result is : %d\n",result);
+
+}
+
+Output:
+
+Enter first number :100
+
+Enter second number :150
+
+Enter operation name: add
+
+                                                             43 | P a g e
+The result is: 250
+
+
+
+Program 5:      Iterate a list of string using for loop
+
+#include <stdio.h>
+int main()
+{
+
+        char flowers[10][20] = {"Rose", "Poppy", "Lily", "Tulip", "Marigold"};
+        int total=sizeof(flowers)/sizeof(flowers[0]);
+        for (int n = 0; n <total; n++)
+        {
+
+                printf("%s\n",flowers[n]);
+        }
+
+}
+
+Output:
+
+Rose
+
+Poppy
+
+Lily
+
+Tulip
+
+Marigold
+
+
+
+Program 6:      Find even numbers from a list using while loop
+
+#include <stdio.h>
+int main(){
+int numbers[10] = { 21, 78, 62, 90, 55, 10, 85, 45 };
+int i = 0;
+printf("The even numbers from the list are:\n");
+while(i < 10)
+
+{
+
+
+
+                                                                                 44 | P a g e
+        if((numbers[i] % 2) == 0)
+
+
+                          printf("%d\n", numbers[i]);
+                          i++;
+
+        }
+}
+
+Output:
+
+The even numbers from the list are:
+
+78
+
+62
+
+90
+
+10
+
+0
+
+0
+
+
+
+Program 7:      Find out the area of a rectangle using the function
+
+#include <stdio.h>
+int area(int h, int w);
+int area(int h, int w)
+{
+
+        int area = h * w;
+
+        return area;
+
+}
+int main()
+{
+
+        int height, width;
+        printf("Enter the height of the rectangle:");
+        scanf("%d", &height);
+        printf("Enter the width of the rectangle:");
+
+                                                                      45 | P a g e
+       scanf("%d", &width);
+       printf("The area of the rectangle = %d\n",area(height,width));
+
+}
+
+Output:
+
+Enter the height of the rectangle:5
+
+Enter the width of the rectangle:3
+
+The area of the rectangle = 15
+
+
+
+
+                                                                        46 | P a g e
+Schedule:
+
+      8:45               10:25       10:40   11:30                         3:10 3:25
+Day/ am to 9:35 am                                  12:20 1:30 pm 2:20 pm
+                         am to       am to   am to                        pm to pm to
+           to 10:25                                 pm to to 2:20 to 3:10
+Time 9:35                10:40       11:30   12:20                         3:25 4:15
+              am                                   1:30 pm  pm      pm
+       am                 am          am      pm                            pm   pm
+
+       Introduction to     Executing C              Executing C
+       Vi Editor             programs            programs   includes
+                    Tea    includes data             data types,     Tea
+ 03       &                                                              Task
+                   Break types, variables, Lunch variables, loop, Break
+      Executing a         loop, operator, Break operator, arrays,
+    simple program        arrays, strings              strings
+
+
+
+Description of the task:
+
+Task 1: Write a C program to take a number as age value of a person and print the person is
+a teenager or young or old.
+
+Task 2: Write a C program to find out a particular string in a list.
+
+Task 3: Write a C Program using the function to calculate the area of trapezium.
+
+
+
+Assessment Pattern:
+
+     Aspect Aspect of                        Extra aspect of       Requirement       Max.
+ Sl. Type description                         description          (only for M)      marks
+ No. (M or
+       J)
+                                    Installing the vi Editor
+                 Installing the vi
+  1.        J                       Yes - 1                              -              1
+                 editor
+                                    No - 0
+                                    Checking the version of
+                 Checking the
+            J                       the vi editor
+  2.             version of the vi                                                      1
+                                    Yes - 1                              -
+                 editor
+                                    No - 0
+                                    If able to open the vi
+            J                       editor
+  3.             Open the vi editor                                      -              1
+                                    Yes - 1
+                                    No - 0
+
+
+
+
+                                                                                   47 | P a g e
+                                 If accessing the insert
+      J   Accessing the          mode to type the text into
+4.        insert mode to type the file                        -        1
+          the text into the file Yes - 1
+                                 No - 0
+                                 If saving the file with .c
+          Save the file with extension
+5.    J                                                       -        1
+          .c extension           Yes - 1
+                                 No - 0
+                                 If compiling the c
+          Compile the            program
+6.    J                                                       -        1
+          program                Yes - 1
+                                 No - 0
+                                 If executing the output of
+          Execute the output the program
+7.    J                                                       -        1
+          of the program         Yes - 1
+                                 No - 0
+                                If error occurs, again
+          If error occurs,
+                                open the vi file and edit
+8.    J   again open the vi                                   -        1
+                                Yes - 1
+          file and edit
+                                No - 0
+                              0 - Exceeded 45 mins
+                              0.5 - Completed within 30
+9.    J   Time Management to 45 mins                          -        1
+                              1 - Completed within 30
+                              min
+                              0 - If none of the aspect is
+                              found
+          Coding Ethics
+                              0.5 - If exhibiting any one
+10.   J   Proper Indentation                                  -        1
+                              aspect
+          Overall design look
+                              1 - If exhibiting all two
+                              aspects
+
+            Total arks                                                10
+
+
+
+
+                                                                  48 | P a g e
+    Day 04                                  Make Files and File Operation
+
+
+
+Objective:
+   •   To understand the concepts of make files and its rules and dependencies.
+   •   To create applications to access files in Linux.
+   •   System Calls used in Linux to control special files like device nodes
+
+
+Outcomes:
+   •   To implement make file using variables, dependencies and rules.
+   •   To understand the Basic File related commands, and create files with various access
+       permissions.
+
+
+Resources Required            :       Linux Virtual environment
+
+
+Safety Precautions            :       Nil
+
+
+Prerequisites:
+   •   Basic shell commands
+   •   Dir & File Commands
+   •   System Commands
+   •   Misc Commands
+   •   Basics of Operating Systems.
+   •   Basic Linux Commands.
+   •   File commands
+
+
+Theory:
+I. MAKE FILES
+Compiling your source code files can be tedious, especially when you want to include several
+source files and have to type the compiling command every time you want to do it. Make files
+are special format files that together with the make utility will help you to automatically build
+and manage your projects.
+
+
+
+                                                                                     49 | P a g e
+The make utility is a software tool for managing and maintaining computer programs consisting
+many component files. The make utility automatically determines which pieces of a large
+program need to be recompiled, and issues commands to recompile them.
+   ▪   Make reads its instruction from Make file (called the descriptor file) by default.
+   ▪   Make file sets a set of rules to determine which parts of a program need to be
+       recompile, and issues command to recompile them.
+   ▪   Make file is a way of automating software building procedure and other complex
+       tasks with dependencies.
+   ▪   Make file contains: dependency rules, macros and suffix (or implicit) rules.
+
+
+
+
+1. The make utility:
+To invoke make, simply type:
+       Make
+This program will look for a file named Make file in your directory and execute it.
+
+
+If you have several make files, then you can execute them with the command:
+       make -f MyMakefile
+
+
+2. Make file rules:
+A make file primarily consisting of rules formatted like this:
+       target: dependencies [tab] system command
+
+
+                                                                                      50 | P a g e
+3. The basic Make file:
+The trivial way to compile the files and obtain an executable, is by running the command:
+        g++ main.cpp hello.cpp factorial.cpp -o hello
+To automatically execute this command, you can create a simple Makefile with these contents:
+all:
+        g++ main.cpp hello.cpp factorial.cpp -o hello
+On this first example we see that our target is called all. This is the default target for make files.
+The make utility will execute this target if no other one is specified. We also see that there are
+no dependencies for target all, so make will execute the specified system command(s). In this
+case, the command compiles the program according to the command line we gave it.
+
+
+4. Using Dependencies:
+For larger projects, it can be helpful to use different targets. This is because if you modify a
+single file in your project, you don't have to recompile everything, only what you modified.
+To accomplish this, it requires breaking the build process into two steps:
+a. Compilation of source code files into an object file.
+b. Linking the object files into an executable.
+
+
+Here is an example:
+        all: hello
+        hello: main.o factorial.o hello.o
+        g++ main.o factorial.o hello.o -o hello
+        main.o: main.cpp
+        g++ -c main.cpp
+        factorial.o: factorial.cpp
+        g++ -c factorial.cpp
+        hello.o: hello.cpp
+        g++ -c hello.cpp
+        clean:
+        rm -rf *.o hello
+
+
+Now we see that the target all has only dependencies, but no system commands. In order for
+make to execute correctly, it has to meet all the dependencies of the called target (in this case
+all). Each of the dependencies are searched through all the targets available and executed if
+                                                                                         51 | P a g e
+found. In this example we see a target called clean. It is useful to have such target if you want
+to have a fast way to get rid of all the object files and executables.
+
+
+5. Using Variables:
+You can also use variables when writing Make files. It comes in handy in situations where you
+want to change the compiler, or the compiler options.
+
+
+       CC=g++
+                  CFLAGS=-c -Wall
+       all: hello
+                  hello: main.o factorial.o hello.o
+       $(CC) main.o factorial.o hello.o -o hello
+                  main.o: main.cpp
+       $(CC) $(CFLAGS) main.cpp
+                  factorial.o: factorial.cpp
+       $(CC) $(CFLAGS) factorial.cpp
+                  hello.o: hello.cpp
+       $(CC) $(CFLAGS) hello.cpp
+       clean:
+                  rm -rf *.o hello
+
+
+
+
+II. LINUX FILE SYSTEMS
+The Linux file system considers everything as a file in Linux; whether it is text file images,
+partitions, compiled programs, directories, or hardware devices.
+In Linux, various file formats are used such as:
+   ▪   text file
+   ▪   audio file
+   ▪   video file
+   ▪   image file
+   ▪   doc file
+   ▪   pdf file or any other file contents
+
+
+Linux files are case sensitive, so test.txt and Test.txt will be considered as two different files.
+                                                                                        52 | P a g e
+There are multiple ways to create a file in Linux. Some conventional methods are as follows:
+    ▪   using cat command
+    ▪   using touch command
+    ▪   using redirect '>' symbol
+    ▪   using echo command
+    ▪   using printf command
+    ▪   using a different text editor like vim, nano, vi
+
+
+1. Using cat command
+The cat command is one of the most used commands in Linux. It is used to create a file, display
+the content of the file, concatenate the contents of multiple files, display the line numbers, and
+more.
+
+
+Create a directory and named it as New_directory, execute the mkdir command as follows:
+        mkdir New_directory
+Change directory to it:
+        cd New_directory
+
+
+Output:
+
+
+
+
+Now execute the cat command to create a file:
+cat > test.txt
+
+
+The above command will create a text file and will enter in the editor mode. Now, enter the
+desired text and press CTRL + D key to save and exit the file and it will return to the command
+line.
+To display the content of the file, execute the cat command as follows:
+Output:
+
+
+
+
+                                                                                      53 | P a g e
+2. Linux Create File - Using the touch command
+The touch command is also one of the popular commands in Linux. It is used to create a new
+file, update the time stamp on existing files and directories. It can also create empty files in
+Linux.
+
+
+The touch command is the simplest way to create a new file from the command line. We can
+create multiple files by executing this command at once.
+
+
+(i) Single File:
+To create a file, execute the touch command followed by the file name as given below:
+         touch test1.txt
+To list the information of the created file, execute the below command:
+         ls - l test1.txt
+Output:
+
+
+
+
+(ii) Multiple File:
+To create multiple files at once, specify files and their extensions after the touch command
+along with a single space. Execute the below command to create three files at once:
+         touch test1.txt test2.txt test3.txt
+
+
+To create two different types of file, execute the command as follows:
+         touch test4.txt test.odt
+The above command will create two different files named as test4.txt and test.odt.
+
+
+3. Linux - File Permission / Access Modes
+File ownership is an important component of Unix that provides a secure method for storing
+files.
+
+
+Every file in Unix has the following attributes:
+Owner permissions:
+The owner's permissions determine what actions the owner of the file can perform on the file.
+
+                                                                                     54 | P a g e
+Group permissions:
+The group's permissions determine what actions a user, who is a member of the group that a
+file belongs to, can perform on the file.
+Other (world) permissions:
+The permissions for others indicate what action all other users can perform on the file.
+
+
+The Permission Indicators:
+The permissions are broken into groups of threes, and each position in the group denotes a
+specific permission, in this order:
+        read (r), write (w), execute (x) –
+
+
+1.   The first three characters (2-4) represent the permissions for the file's owner. For
+     example, -rwxr-xr-- represents that the owner has read (r), write (w) and execute (x)
+     permission.
+2.   The second group of three characters (5-7) consists of the permissions for the group to
+     which the file belongs. For example, -rwxr-xr-- represents that the group has read (r) and
+     execute (x) permission, but no write permission.
+3.   The last group of three characters (8-10) represents the permissions for everyone else. For
+     example, -rwxr-xr-- represents that there is read (r) only permission.
+
+
+4. File Access Modes
+The permissions of a file are the first line of defense in the security of a Unix system.
+The basic building blocks of Unix permissions are the read, write, and execute permissions,
+which have been described below:
+Read
+        Grants the capability to read, i.e., view the contents of the file.
+Write
+        Grants the capability to modify, or remove the content of the file.
+Execute
+        Users with execute permissions can run a file as a program.
+
+
+5. Directory Access Modes
+Directory access modes are listed and organized in the same manner as any other file.
+There are a few differences that need to be mentioned:
+                                                                                      55 | P a g e
+Read
+        Access to a directory means that the user can read the contents. The user can look at
+        the filenames inside the directory.
+Write
+        Access means that the user can add or delete files from the directory.
+Execute
+        Executing a directory doesn't really make sense, so think of this as a traverse
+        permission.
+A user must have execute access to the bin directory in order to execute the ls or
+the cd command.
+
+
+6. Changing Permissions
+To change the file or the directory permissions, you use the chmod (change mode) command.
+There are two ways to use chmod — the symbolic mode and the absolute mode.
+
+
+(i) Using chmod in Symbolic Mode
+The easiest way for a beginner to modify file or directory permissions is to use the symbolic
+mode. With symbolic permissions you can add, delete, or specify the permission set you want
+by using the operators in the following table.
+
+
+
+        S No                          Chmod operator & Description
+
+                   +
+          1
+                   Adds the designated permission(s) to a file or directory.
+                   -
+          2
+                   Removes the designated permission(s) from a file or directory.
+                   =
+          3
+                   Sets the designated permission(s).
+
+
+Example using testfile:
+Running ls -1 on the testfile shows that the file's permissions are as follows:
+        $ls -l testfile
+        -rwxrwxr-- 1 amrood users 1024 Nov 2 00:10 testfile
+
+
+
+
+                                                                                    56 | P a g e
+Then each example chmod command from the preceding table is run on the testfile, followed
+by ls –l, so you can see the permission changes:
+       $chmod o+wx testfile
+       $ls -l testfile
+       -rwxrwxrwx 1 amrood users 1024 Nov 2 00:10 testfile
+       $chmod u-x testfile
+       $ls -l testfile
+       -rw-rwxrwx 1 amrood users 1024 Nov 2 00:10 testfile
+       $chmod g = rx testfile
+       $ls -l testfile
+       -rw-r-xrwx 1 amrood users 1024 Nov 2 00:10 testfile
+
+
+Now, combine these commands on a single line:
+       $chmod o+wx,u-x,g = rx testfile
+       $ls -l testfile
+       -rw-r-xrwx 1 amrood users 1024 Nov 2 00:10 testfile
+
+
+(ii) Using chmod with Absolute Permissions
+The second way to modify permissions with the chmod command is to use a number to specify
+each set of permissions for the file.
+Each permission is assigned a value, as the following table shows, and the total of each set of
+permissions provides a number for that set.
+
+      Number                 Octal Permission Representation                     Ref
+
+          0       No permission                                                   ---
+
+          1       Execute permission                                             --x
+
+          2       Write permission                                               -w-
+
+          3       Execute and write permission: 1 (execute) + 2 (write) = 3      -wx
+
+          4       Read permission                                                 r--
+
+          5       Read and execute permission: 4 (read) + 1 (execute) = 5        r-x
+
+                                                                                   57 | P a g e
+          6       Read and write permission: 4 (read) + 2 (write) = 6          rw-
+
+          7       All permissions: 4 (read) + 2 (write) + 1 (execute) = 7      rwx
+
+
+Here's an example using the testfile. Running ls -1 on the testfile shows that the file's
+permissions are as follows:
+       $ls -l testfile
+       -rwxrwxr-- 1 amrood users 1024 Nov 2 00:10 testfile
+
+
+Then each example chmod command from the preceding table is run on the testfile, followed
+by ls –l, so you can see the permission changes:
+       $ chmod 755 testfile
+       $ls -l testfile
+       -rwxr-xr-x 1 amrood users 1024 Nov 2 00:10 testfile
+       $chmod 743 testfile
+       $ls -l testfile
+       -rwxr---wx 1 amrood users 1024 Nov 2 00:10 testfile
+       $chmod 043 testfile
+       $ls -l testfile
+       ----r---wx 1 amrood users 1024 Nov 2 00:10 testfile
+
+
+(iii) Changing Owners and Groups:
+While creating an account on Unix, it assigns a owner ID and a group ID to each user. All the
+permissions mentioned above are also assigned based on the Owner and the Groups.
+Two commands are available to change the owner and the group of files:
+   •   chown − The chown command stands for "change owner" and is used to change the
+       owner of a file.
+   •   chgrp − The chgrp command stands for "change group" and is used to change the
+       group of a file.
+
+
+(a) Changing Ownership:
+The chown command changes the ownership of a file. The basic syntax is as follows:
+       $ chown user filelist
+
+
+                                                                                 58 | P a g e
+The value of the user can be either the name of a user on the system or the user id (uid) of a
+user on the system.
+
+
+Example:
+$ chown amrood testfile
+$Changes the owner of the given file to the user amrood.
+
+
+(b) Changing Group Ownership:
+The chgrp command changes the group ownership of a file. The basic syntax is as follows −
+       $ chgrp group filelist
+The value of group can be the name of a group on the system or the group ID (GID) of a
+group on the system.
+
+
+Example:
+       $ chgrp special testfile
+$Changes the group of the given file to special group.
+
+
+
+
+                                                                                  59 | P a g e
+Schedule:
+
+      8:45                                                1:30   2:20
+            9:35          10:25   10:40 11:30   12:20                     3:10
+       am                                                  pm     pm
+ Day/      am to          am to   am to am to   pm to                    pm to   3:25 pm to
+       to                                                   to     to
+ Time      10:25          10:40   11:30 12:20    1:30                     3:25    4:15 pm
+      9:35                                                2:20   3:10
+             am            am      am    pm       pm                       pm
+       am                                                  pm     pm
+
+          Basic shell                                   File modes
+          commands        Tea File handling Lunch           and          Tea        Task
+  04
+           in make       Break commands     Break        changing       Break    Assessment
+             files                                      permissions
+
+
+Description of the task:
+Task 1 : Write a program for making a simple make file.
+Task 2 : Write a program for how make process a make file.
+Task 3 : Write a command that arguments to specify the make file.
+Task 4 : Write a command for defining and redefining pattern rules.
+Task 5 : Create Files using all basic commands, apply various Access Permissions and modify
+the privileges of the files.
+
+
+Assessment Pattern:
+         Aspect
+ Sl.     Type                                   Extra aspect of       Requirement      Max.
+                        Aspect of description
+ No.     (M or                                   description          (only for M)     marks
+           J)
+                    Creation, Reading and           Yes - 1
+  1.         J                                                             -               1
+                    Naming a file                   No - 0
+                    Implementation of target        Yes - 1
+  2.         J                                                             -               1
+                    and make utility                No - 0
+                    Usage of variables and          Yes - 1
+  3.         J                                                             -               1
+                    dependencies                    No - 0
+                    Implementing pattern            Yes - 1
+  4.         J                                                             -               1
+                    rules                           No - 0
+                    Create different files
+                                                    Yes - 1
+  5.         J      using Touch and echo                                   -               1
+                                                    No - 0
+                    command
+                    Show the directory
+                                                    Yes - 1
+  6.         J      hierarchy in a tree-like                               -               1
+                                                    No - 0
+                    format
+                                                    Yes - 1
+  7.         J      Verify the Group ID                                    -               1
+                                                    No - 0
+
+
+                                                                                     60 | P a g e
+                                     If yes, then
+                                     a. read(r), is used –
+          revokes all the read(r),
+                                     0.5
+8.    J   write(w) and execute(x)
+                                     b. write(w) is used
+                                                             -         1
+          permission of the file
+                                     – 0.5
+                                     No - 0
+                                     0 - Exceeded 45
+                                     mins
+                                     0.5 - Completed
+9.    J   Time Management            within 30 to 45         -         1
+                                     mins
+                                     1 - Completed
+                                     within 30 min
+                                     0 - If none of the
+                                     aspect is found
+          Coding Ethics
+                                     0.5 - If exhibiting
+10.   J   Proper Indentation                                 -         1
+                                     any one aspect
+          Overall design look
+                                     1 - If exhibiting
+                                     all two aspects
+
+                           Total Marks                                10
+
+
+
+
+                                                                 61 | P a g e
+        Day 05               Linux Signals and Handling Signals & Process in Linux
+
+
+
+Objective:
+
+To understand the basic concepts of Signals, Basic Signals handling in Linux.
+
+Outcomes:
+
+To learn and handle signals and process in Linux and Catch a signal using C programming.
+
+Resources Required              :          Linux Virtual environment
+
+Safety Precautions              :          Nil
+
+Prerequisites                   :          C programming
+
+
+
+Theory:
+
+Reference link:
+
+https://docs.google.com/document/d/1qPLOcUiX3jFo4mo1fSKUUqejJ8GQIGf0/edit?usp=sh
+are_link&ouid=102585827095202023013&rtpof=true&sd=true
+
+https://www.javatpoint.com/linux-signals
+
+
+
+
+A feature of LINUX programming is the idea of sending and receiving signals. A signal is a
+kind of (usually software) interrupt, used to announce asynchronous events to a process.
+
+Signals are software interrupts sent to a program to indicate that an important event has
+occurred. The events can vary from user requests to illegal memory access errors. Some signals,
+such as the interrupt signal, indicate that a user has asked the program to do something that is
+not in the usual flow of control. The name of a LINUX signal begins with "SIG". Although
+signals are numbered, we normally refer to them by their names.
+
+For example:
+
+    ▪    SIGINT is a signal generated when a user presses Control-C. This will terminate the
+         program from the terminal.
+
+    ▪    SIGALRM is generated when the timer set by the alarm function goes off.
+
+
+                                                                                    62 | P a g e
+   ▪   SIGABRT is generated when a process executes the abort function.
+
+   ▪   SIGSTOP tells LINUX to pause a process to be resumed later.
+
+   ▪   SIGCONT tells LINUX to resume the processed paused earlier.
+
+   ▪   SIGSEGV is sent to a process when it has a segmentation fault.
+
+   ▪   SIGKILL is sent to a process to cause it to terminate at once.
+
+   ▪   Some signals terminate the receiving process: SIGHUP, SIGINT, SIGTERM,
+       SIGKILL. There are signals that terminate the process along with a core dump to help
+       programmers debug what went wrong: SIGABRT (abort signal), SIGBUS (bus error),
+       SIGILL (illegal instruction), SIGSEGV (invalid memory reference), SIGSYS (bad
+       system call). Other signals stop the process: SIGSTOP, SIGTSTP. SIGCONT is a
+       signal that resumes a stopped process.
+
+
+
+1. Listing all the signals using list command:
+
+The Command ”kill –l” lists all the 64 signal names.
+
+       user@user-System-Product-Name:~$ kill -l
+
+1) SIGHUP     2) SIGINT      3) SIGQUIT                4) SIGILL    5) SIGTRAP
+
+6) SIGABRT      7) SIGBUS      8) SIGFPE        9) SIGKILL    10) SIGUSR1
+
+11) SIGSEGV 12) SIGUSR2          13) SIGPIPE      14) SIGALRM        15) SIGTERM
+
+16) SIGSTKFLT      17) SIGCHLD      18) SIGCONT         19) SIGSTOP     20) SIGTSTP
+
+21) SIGTTIN 22) SIGTTOU          23) SIGURG       24) SIGXCPU        25) SIGXFSZ
+
+26) SIGVTALRM       27) SIGPROF 28) SIGWINCH              29) SIGIO     30) SIGPWR
+
+31) SIGSYS 34) SIGRTMIN 35) SIGRTMIN+1 36) SIGRTMIN+2 37) SIGRTMIN+3
+
+38) SIGRTMIN+4      39) SIGRTMIN+5        40) SIGRTMIN+6           41) SIGRTMIN+7
+
+42) SIGRTMIN+8 43) SIGRTMIN+9           44) SIGRTMIN+10        45) SIGRTMIN+11
+
+46) SIGRTMIN+12 47) SIGRTMIN+13 48) SIGRTMIN+14                    49) SIGRTMIN+15
+
+50) SIGRTMAX-14       51) SIGRTMAX-13 52) SIGRTMAX-12 53) SIGRTMAX-11
+
+54) SIGRTMAX-10       55) SIGRTMAX-9        56) SIGRTMAX-8 57) SIGRTMAX-7
+
+
+                                                                                    63 | P a g e
+58) SIGRTMAX-6        59) SIGRTMAX-5        60) SIGRTMAX-4    61) SIGRTMAX-3
+
+62) SIGRTMAX-2 63) SIGRTMAX-1             64) SIGRTMAX
+
+
+
+2. Identifying the sleeping Process and killing the same using ‘SIGTERM’ /
+CODE command
+
+       user@user-System-Product-Name:~$ sleep 4545 &
+
+       [1] 7826
+
+Here the following code 15 refers termination Command used for terminating the process
+
+       user@user-System-Product-Name:~$ kill -15 7826
+
+       [1]+ Terminated                 sleep 4545
+
+
+
+3. Stopping the process using SIGSTOP command
+
+       user@user-System-Product-Name:~$ sleep 4545 &
+
+       [1] 7848
+
+       user@user-System-Product-Name:~$ kill -SIGSTOP 7848
+
+       [1]+ Stopped          sleep 4545
+
+       user@user-System-Product-Name:~$ sleep 4545 &
+
+       [2] 7955
+
+
+
+4. Continuing the process using SIGCONT command
+
+       user@user-System-Product-Name:~$ ps -C sleep
+
+       PID TTY        TIME CMD
+
+       7848 pts/0     00:00:00 sleep
+
+       7955 pts/0     00:00:00 sleep
+
+       user@user-System-Product-Name:~$ kill -l
+
+
+
+
+                                                                               64 | P a g e
+1) SIGHUP       2) SIGINT     3) SIGQUIT      4) SIGILL     5) SIGTRAP
+
+6) SIGABRT       7) SIGBUS      8) SIGFPE     9) SIGKILL        10) SIGUSR1
+
+11) SIGSEGV 12) SIGUSR2           13) SIGPIPE      14) SIGALRM      15) SIGTERM
+
+16) SIGSTKFLT       17) SIGCHLD      18) SIGCONT       19) SIGSTOP     20) SIGTSTP
+
+21) SIGTTIN 22) SIGTTOU           23) SIGURG       24) SIGXCPU      25) SIGXFSZ
+
+26) SIGVTALRM        27) SIGPROF 28) SIGWINCH             29) SIGIO   30) SIGPWR
+
+31) SIGSYS 34) SIGRTMIN 35) SIGRTMIN+1 36) SIGRTMIN+2 37) SIGRTMIN+3
+
+38) SIGRTMIN+4         39) SIGRTMIN+5      40) SIGRTMIN+6         41) SIGRTMIN+7
+
+42) SIGRTMIN+8 43) SIGRTMIN+9            44) SIGRTMIN+10         45) SIGRTMIN+11
+
+46) SIGRTMIN+12        47) SIGRTMIN+13 48) SIGRTMIN+14             49) SIGRTMIN+15
+
+50) SIGRTMAX-14         51) SIGRTMAX-13       52) SIGRTMAX-12 53) SIGRTMAX-11
+
+54) SIGRTMAX-10         55) SIGRTMAX-9       56) SIGRTMAX-8        57) SIGRTMAX-7
+
+58) SIGRTMAX-6         59) SIGRTMAX-5       60) SIGRTMAX-4        61) SIGRTMAX-3
+
+62) SIGRTMAX-2 63) SIGRTMAX-1              64) SIGRTMAX
+
+
+
+        user@user-System-Product-Name:~$ kill -SIGCONT 7848
+
+        user@user-System-Product-Name:~$ jobs
+
+        [1]- Running          sleep 4545 &
+
+        [2]+ Running          sleep 4545 &
+
+        user@user-System-Product-Name:~$ kill SIGTERM 7848
+
+
+
+Note:
+
+        bash: kill: SIGTERM: arguments must be process or job IDs
+
+        user@user-System-Product-Name:~$ kill SIGTERM [2]
+
+        bash: kill: [2]: arguments must be process or job IDs
+
+        [1] - Terminated              sleep 4545
+
+
+                                                                                   65 | P a g e
+       user@user-System-Product-Name:~$ sleep 4548 &
+
+       [3] 8014
+
+       user@user-System-Product-Name:~$ jobs
+
+       [2]- Running            sleep 4545 &
+
+       [3]+ Running            sleep 4548 &
+
+       user@user-System-Product-Name:~$ pstree -s 8014
+
+       systemd───systemd───gnome-terminal-───bash───sleep
+
+
+
+5. C program to catch Signal:
+
+Whenever ctrl+c is pressed, a signal SIGINT is sent to the process. The default action of this
+signal is to terminate the process. But this signal can also be handled.
+
+Program:
+
+#include<stdio.h>
+
+#include<signal.h>
+
+#include<unistd.h>
+
+void sig_handler(int signo)
+
+{
+
+       if (signo == SIGINT)
+
+                 printf("received SIGINT\n");
+
+}
+
+int main(void)
+
+{
+
+       if (signal(SIGINT, sig_handler) == SIG_ERR)
+
+                 printf("\ncan't catch SIGINT\n");
+
+       // A long long wait so that we can easily issue a signal to this process
+
+       while(1)
+
+
+                                                                                  66 | P a g e
+        sleep (1);
+
+        return 0;
+
+}
+
+
+
+In the code above, we have simulated a long running process using an infinite while loop.
+
+    ▪   A function sig_handler is used a s a signal handler. This function is registered to the
+        kernel by passing it as the second argument of the system call ‘signal’ in the main()
+        function.
+
+    ▪   The first argument to the function ‘signal’ is the signal we intend the signal handler to
+        handle which is SIGINT in this case.
+
+
+
+Sleep(1) function has been used in the while loop so that while loop executes after some time
+(ie one second in this case). This becomes important because otherwise an infinite while loop
+running wildly may consume most of the CPU making the computer very slow.
+
+
+
+When the process is run and terminate the process using Ctrl+C:
+
+        $ ./sigfunc
+
+        ^Creceived SIGINT
+
+        ^Creceived SIGINT
+
+        ^Creceived SIGINT
+
+        ^Creceived SIGINT
+
+        ^Creceived SIGINT
+
+        ^Creceived SIGINT
+
+        ^Creceived                                                                      SIGINT
+
+
+The key combination ctrl+c tried several times but each time the process didn’t terminate. This
+is because the signal was handled in the code and this was confirmed from the print we got on
+each line
+
+                                                                                     67 | P a g e
+6. SIGKILL, SIGSTOP and User Defined Signals
+
+Apart from handling the standard signals (like INT, TERM etc) that are available. The user
+defined signals that can be sent and handled. Following is the code handling a user defined
+signal USR1:
+
+#include<stdio.h>
+
+#include<signal.h>
+
+#include<unistd.h>
+
+void sig_handler(int signo)
+
+{
+
+       if (signo == SIGUSR1)
+
+                 printf("received SIGUSR1\n");
+
+       else if (signo == SIGKILL)
+
+                 printf("received SIGKILL\n");
+
+       else if (signo == SIGSTOP)
+
+                 printf("received SIGSTOP\n");
+
+}
+
+int main(void)
+
+{
+
+       if (signal(SIGUSR1, sig_handler) == SIG_ERR)
+
+                 printf("\ncan't catch SIGUSR1\n");
+
+       if (signal(SIGKILL, sig_handler) == SIG_ERR)
+
+                 printf("\ncan't catch SIGKILL\n");
+
+       if (signal(SIGSTOP, sig_handler) == SIG_ERR)
+
+                 printf("\ncan't catch SIGSTOP\n");
+
+       // A long long wait so that we can easily issue a signal to this process
+
+       while(1)
+
+       sleep(1);
+
+                                                                                  68 | P a g e
+       return 0;
+
+}
+
+
+
+We have tried to handle a user defined signal USR1. Also, two signals KILL and STOP cannot
+be handled. So, we have also tried to handle these two signals so as to see how the ‘signal’
+system call responds in this case.
+
+Output:
+
+       $ ./sigfunc
+
+       can't catch SIGKILL
+
+       can't catch SIGSTOP
+
+The system call ‘signal’ tries to register handler for KILL and STOP signals, the signal
+function fails indicating that these two signals cannot be caught.
+
+
+Now we try to pass the signal USR1 to this process using the kill command.
+
+       $ kill -USR1 2678
+
+       $ ./sigfunc
+
+       can't catch SIGKILL
+
+       can't catch SIGSTOP
+
+       received SIGUSR1
+
+The user defined signal USR1 was received in the process and was handled properly.
+
+
+
+
+                                                                                   69 | P a g e
+II. PROCESS MANAGEMENT
+
+Theory:
+
+A process means a program in execution. It generally takes an input, processes it, and gives us
+the appropriate output.
+
+Reference link:
+
+https://docs.google.com/document/d/1qUXAK61HfSDU8oXmwdpudbo85uepyKLMAkL7IO
+SnQ2U/edit?usp=sharing
+
+
+
+1. Managing the Processes
+
+Step 1. How to execute foreground process.
+
+       sleep 5
+
+
+
+
+This command will be executed in the terminal and we would be able to execute another
+command after the execution of the above command.
+
+
+
+Step 2. Stopping a process in between of its execution.
+
+To stop a foreground process in between of its execution we may press CTRL+Z to force stop
+it.
+
+       sleep 100
+
+
+
+
+Pressing CTRL+Z in between the execution of the command will stop it.
+
+
+
+Step 3. To get the list of jobs that are either running or stopped.
+
+       jobs
+                                                                                   70 | P a g e
+It will display the stopped processes in this terminal and even the pending ones.
+
+
+
+Step 4. To run all the pending and force stopped jobs in the background.
+
+       bg
+
+
+
+
+This will start the stopped and pending processes in the background.
+
+
+
+Step 5. To get details of a process running in background.
+
+       ps -ef | grep sleep
+
+
+
+
+Step 6. To run all the pending and force stopped jobs in the foreground.
+
+       fg
+
+
+
+
+                                                                                    71 | P a g e
+This will start the stopped and pending processes in the foreground.
+
+
+
+Step 7. To run a process in the background without getting impacted by the closing of the
+terminal.
+
+       nohup sleep 100 &
+
+
+
+
+While executing, it will even store all the output after execution in nohup.out file.
+
+
+
+Step 8. To run some processes in the background directly.
+
+            sleep 100&
+
+
+
+
+This will run the process in the background and will display the process id of the process.
+
+
+Step 9. To run processes with priority.
+
+       nice -n 5 sleep 100
+
+
+
+
+                                                                                        72 | P a g e
+The top priority is -20 but as it may affect the system processes so we have used the priority 5.
+
+
+
+Step 10. To get the list of all the running processes on your Linux machine.
+
+           Top
+
+
+
+
+                                                                                     73 | P a g e
+2. Process, Parent Process, and Child Process
+
+Running program is a process. From this process, another process can be created. There is a
+parent-child relationship between the two processes. This can be achieved using a library
+function called fork(). fork() function splits the running process into two processes, the existing
+one is known as parent and the new process is known as a child. Here is a program that
+demonstrates this:
+
+Program 1:             Demonstration Program in C
+
+// C program to demonstrate the above concept
+
+#include <sys/types.h>
+
+#include<stdio.h>
+
+#include <unistd.h>
+
+// Driver code
+
+int main()
+
+{
+
+       printf ("Before Forking\n");
+
+       fork();
+
+       printf ("After Forking\n");
+
+}
+
+Output:
+
+    Before Forking
+
+    After Forking
+
+    Before Forking
+
+    After Forking
+
+
+
+                                                                                      74 | P a g e
+Program 2:
+
+The task here is to show how to perform two different but interrelated jobs simultaneously.
+Hence, the actual code for file copying and playing the animated GIF file has been skipped
+only the approach for performing 2 jobs simultaneously is shown.
+
+// C program for the above approach
+
+#include <sys/types.h>
+
+// Driver Code
+
+int main( )
+
+{
+
+       int pid;
+
+       pid = fork();
+
+       if (pid == 0)
+
+       {
+
+                  printf ("In child process\n");
+
+                  /* code to play animated GIF file */
+
+       }
+
+       else
+
+       {
+
+                  printf ("In parent process\n");
+
+                  /* code to copy file */
+
+       }
+
+}
+
+
+
+3. fork(), vfork(), exec() and clone() commands:
+
+System calls
+
+System calls provide an interface to the services made available by an operating system. The
+system calls fork(), vfork(), exec(), and clone() are all used to create and manipulate processes.
+
+                                                                                      75 | P a g e
+(i) fork()
+
+Processes execute the fork() system call to create a new child process.
+
+Executing fork()           ---- (1)
+
+Create a file named fork_test.c with the Nano editor:
+
+        $ nano fork_test.cCopy
+
+Next, we add this content:
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#include<unistd.h>
+
+#include<sys/types.h>
+
+int main(int argc, char **argv)
+
+{
+
+        pid_t pid = fork();
+
+        if (pid==0)
+
+        {
+
+                printf("This is the Child process and pid is: %d\n",getpid());
+
+                exit(0);
+
+        }
+
+        else if (pid > 0)
+
+        {
+
+                printf("This is the Parent process and pid is: %d\n",getpid());
+
+        }
+
+        else
+
+        {
+
+                printf("Error while forking\n");
+
+                exit(EXIT_FAILURE);
+
+
+                                                                                  76 | P a g e
+        }
+
+        return 0;
+
+}
+
+Copy            ---- (2)
+
+Here, we’re starting a new process and using the variable pid to store the process identifier of
+the child process created by the fork() call. We then proceed to check if the value
+of pid returned by the fork() call is equal to zero. The fork() call returns the value of the child
+process as zero to differentiate it from its parent. The actual value of the child process identifier
+is the value returned to the parent process. Finally, we check for errors and print an error
+message.
+
+After saving the changes, we use the cc command to compile fork_test.c:
+
+    $ cc fork_test.cCopy
+
+This creates an executable file called a.out in the working directory.
+
+Finally, we can execute the a.out file:
+
+    $ ./a.out
+
+This is the Parent process and pid is: 69032
+
+This is the Child process and pid is: 69033Copy
+
+
+
+(ii) vfork()
+
+Similar to the fork() system call, vfork() also creates a child process that’s identical to its parent
+process. However, the child process temporarily suspends the parent process until it
+terminates. This is because both processes use the same address space, which contains the
+stack, stack pointer, and instruction pointer.
+
+vfork() acts as a special case of the clone() system call. It creates new processes without
+copying the address space of the parent process. This is useful in performance-oriented
+applications.
+
+The parent process is always suspended once the child process is created. It remains suspended
+until the child process terminates normally, abnormally, or until it executes the exec system
+call starting a new process.
+
+                                                                                         77 | P a g e
+The child process created by the vfork() system call inherits its parent’s attributes. These
+include file descriptors, current working directory, signal dispositions, and more.
+
+
+
+Executing vfork()         ----- (1)
+
+Create a file named vfork_test.c:
+
+#include <sys/types.h>
+
+#include <unistd.h>
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+int main()
+
+{
+
+       pid_t pid = vfork(); //creating the child process
+
+       printf("parent process pid before if...else block: %d\n", getpid());
+
+       if (pid == 0)
+
+       { //checking if this is the a child process
+
+               printf("This is the child process and pid is: %d\n\n", getpid());
+
+               exit(0);
+
+       }
+
+       else if (pid > 0)
+
+       { //parent process execution
+
+               printf("This is the parent process and pid is: %d\n", getpid());
+
+       }
+
+       else
+
+       {
+
+               printf("Error while forking\n");
+
+               exit(EXIT_FAILURE);
+
+
+                                                                                      78 | P a g e
+        }
+
+           return 0;
+
+}
+
+Copy              ----- (2)
+
+Here, we’re using variable pid to store the PID of the child process created by the vfork() call.
+We then check to see the value of the parent’s PID before the if…else block.
+
+After saving the changes, let’s compile vfork_test.c:
+
+        $ cc vfork_test.cCopy
+
+Finally, we can execute the created a.out file:
+
+        $ ./a.out
+
+parent process pid before if...else block: 117117
+
+This is the child process and pid is: 117117
+
+parent process pid before if...else block: 117116
+
+This is the parent process and pid is: 117116Copy
+
+The vfork() system call returns the output twice, first in the child process and then in the parent
+process.
+
+Since both processes share the same address space, we have matching PID values in the first
+output. In the if else block, the child process is run first because it blocks the parent process
+while executing.
+
+
+
+(iii) exec()
+
+The exec() system function runs a new process in the context of an existing process and
+replaces it. This is also referred to as an overlay.
+
+The function doesn’t create a new process, so the PID doesn’t change. However, the new
+process replaces the data, heap, stack, and machine code of the current process. It loads the
+new process into the current process space and executes it from the entry point. Control never
+returns to the original process unless there’s an exec() error.
+
+
+
+
+                                                                                      79 | P a g e
+This system function belongs to a family functions that
+includes execl(), execlp(), execv(), execvp(), execle(), and execve().
+
+
+
+Executing exec()       ------ (1)
+
+Create the first program named exec_test1.c:
+
+#include <stdio.h>
+
+#include <unistd.h>
+
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+
+{
+
+       printf("PID of exec_test1.c = %d\n", getpid());
+
+       char *args[] = {"Hello", "From", "Parent", NULL};
+
+       execv("./exec_test2", args);
+
+       printf("Back to exec_test1.c");
+
+       return 0;
+
+}
+
+Copy           ----- (2)
+
+Create the second program called exec_test2.c:
+
+#include <stdio.h>
+
+#include <unistd.h>
+
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+
+{
+
+printf("Hello from exec_test2.c\n");
+
+printf("PID of exec_test2.c process is: %d\n", getpid());
+
+return 0;
+
+
+                                                                         80 | P a g e
+}
+
+Copy
+
+Here, we’re printing a message and the PID of the process launched by exec() from the first
+program.
+
+We use the cc command to compile exec_test1.c to an executable:
+
+       $ cc exec_test1.c -o exec_test1Copy
+
+This creates an executable file called exec_test1 in the working directory.
+
+Then, we compile the second program:
+
+       $ cc exec_test2.c -o exec_test2Copy
+
+This creates an executable file called exec_test1 in the working directory.
+
+Finally, we can execute the exec_test1 file:
+
+       $ ./exec_test1
+
+       PID of exec_test1.c = 171939
+
+       Hello from exec_test2.c
+
+       PID of exec_test2.c process is: 171939
+
+From the output above, we can notice that the PID didn’t change in the second program’s
+process. Furthermore, the last print statement from exec_test1.c file wasn’t printed. This is
+because executing the execv() system call replaced the currently running process, and we
+haven’t included a way of returning back to the first process.
+
+
+
+(iv) clone()
+
+The clone() system call is an upgraded version of the fork call. It’s powerful since it creates a
+child process and provides more precise control over the data shared between the parent and
+child processes. The caller of this system call can control the table of file descriptors, the table
+of signal handlers, and whether the two processes share the same address space.
+
+clone() system call allows the child process to be placed in different namespaces. With the
+flexibility that comes with using the clone() system call, we can choose to share an address
+
+
+
+
+                                                                                       81 | P a g e
+space with the parent process, emulating the vfork() system call. We can also choose to share
+file system information, open files, and signal handlers using different flags available.
+
+
+
+This is the signature of the clone() system call:
+
+         int clone(int (*fn)(void *), void *stack, int flags, void *arg, ...
+
+         /* pid_t *parent_tid, void *tls, pid_t *child_tid */ );Copy
+
+Details:
+
+     ▪     *fn: pointer that points to a function
+
+     ▪     *stack: points to the smallest byte of a stack
+
+     ▪     pid_t: process identifier (PID)
+
+     ▪     *parent_tid: points to the storage location of child process thread identifier (TID) in
+           parent process memory
+
+     ▪     *child_tid: points to the storage location of the child process thread identifier (TID)
+           in the child process memory
+
+Executing clone()                ------ (1)
+
+Create a file named clone_test.c:
+
+// We have to define the _GNU_SOURCE to get access to clone(2) and the CLONE_*
+
+#define _GNU_SOURCE
+
+#include <sched.h>
+
+#include <sys/syscall.h>
+
+#include <sys/wait.h>
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <string.h>
+
+#include <unistd.h>
+
+static int child_func(void* arg)
+
+{
+
+                                                                                      82 | P a g e
+       char* buffer = (char*)arg;
+
+       printf("Child sees buffer = \"%s\"\n", buffer);
+
+       strcpy(buffer, "hello from child");
+
+       return 0;
+
+}
+
+int main(int argc, char** argv)
+
+{
+
+       // Allocate stack for child task.
+
+       const int STACK_SIZE = 65536;
+
+       char* stack = malloc(STACK_SIZE);
+
+       if (!stack)
+
+       {
+
+                  perror("malloc");
+
+       exit(1);
+
+       }
+
+       // When called with the command-line argument "vm", set the CLONE_VM flag on.
+
+       unsigned long flags = 0;
+
+       if (argc > 1 && !strcmp(argv[1], "vm"))
+
+       {
+
+                  flags |= CLONE_VM;
+
+       }
+
+       char buffer[100];
+
+       strcpy(buffer, "hello from parent");
+
+       if (clone(child_func, stack + STACK_SIZE, flags | SIGCHLD, buffer) == -1)
+
+       {
+
+                  perror("clone");
+
+
+                                                                             83 | P a g e
+                 exit(1);
+
+       }
+
+       int status;
+
+       if (wait(&status) == -1)
+
+       {
+
+                 perror("wait");
+
+                 exit(1);
+
+       }
+
+       printf("Child exited with status %d. buffer = \"%s\"\n", status, buffer);
+
+return 0;
+
+}
+
+Copy             -----(2)
+
+clone() is used in two ways, once with the CLONE_VM flag and once without. We’re passing
+a buffer into the child process, and the child process writes a string to it. We then allocate a
+stack size for the child process and create a function that checks whether we’re executing the
+file using the CLONE_VM (vm) option. Furthermore, we’re creating a buffer of 100 bytes in
+the parent process and copying a string to it, then executing the clone() system call and
+checking for errors.
+
+We use the cc command to compile exec_test.c to an executable:
+
+       $ cc clone_test.cCopy
+
+This creates an executable file called a.out in the working directory.
+
+Finally, we can execute the a.out file:
+
+       ./a.out
+
+Child sees buffer = "hello from parent"
+
+Child exited with status 0. buffer = "hello from parent"
+
+
+
+
+                                                                                    84 | P a g e
+Copy            -------(2.1)
+
+When we execute it without the vm argument, the CLONE_VM flag isn’t active, and the parent
+process virtual memory is cloned into the child process. The child process can access the
+message passed by the parent process in buffer, but anything written into buffer by the child
+isn’t accessible to the parent process.
+
+But, when we pass in the vm argument, CLONE_VM is active and the child process shares the
+parent’s process memory. We can see it writing into buffer:
+
+        $ ./a.out vm
+
+Child sees buf = "hello from parent"
+
+Child exited with status 0. buf = "hello from child"Copy
+
+This time our message is different, and we can see the message passed from the child process.
+
+
+Schedule:
+
+         8:45                                                 1:30    2:20
+                  9:35     10:25    10:40   11:30    12:20                     3:10        3:25
+          am                                                   pm      pm
+ Day/            am to     am to    am to   am to    pm to                    pm to       pm to
+           to                                                   to      to
+ Time            10:25     10:40    11:30   12:20     1:30                     3:25        4:15
+         9:35                                                 2:20    3:10
+                   am       am       am      pm        pm                       pm          pm
+          am                                                   pm      pm
+
+                                                                                         Task 3
+         Linux
+                                                                 Linux                   &     4
+         Signals and Tea              Task 1 and    Lunch                    Tea
+  05                                                            Process                  and
+         Creation of Break              Task 2      Break                    Break
+                                                                creation                 Assess
+         Signals
+                                                                                         -ment
+
+
+
+Description of the task:
+
+Task 1: Write a C program to handle and catch Signals in the Linux environment.
+
+Task 2: Write a C program to handle user defined signal.
+
+Task 3: Managing Linux process
+
+Task 4: How to create child process using fork(), vfork(), exec(), clone() system calls.
+
+
+
+
+                                                                                      85 | P a g e
+Assessment Pattern:
+
+       Aspect
+ Sl.   Type                                Extra aspect of       Requirement Max.
+              Aspect of description
+ No.   (M or                               description           (only for M) marks
+       J)
+              Implementation of SIGINT            Yes - 1
+ 1.       J                                                           -            1
+              signal                              No – 0
+              Execution and display of           Yes – 1
+ 2.       J                                                           -            1
+              signal commands                     No – 0
+              Creation of C program to
+                                                  Yes - 1
+ 3.       J   demonstrate the signal                                  -            1
+                                                  No – 0
+              handling
+              Creation of C program to
+                                                 Yes – 1
+ 4.       J   demonstrate User defined                                -            1
+                                                  No – 0
+              signal handling
+              Foreground process using            Yes - 1
+ 5.       J                                                           -            1
+              sleep()                             No - 0
+               To get details of a process        Yes - 1
+ 6.       J                                                           -            1
+              running in background               No - 0
+              To run processes with               Yes - 1                          1
+ 7.       J                                                           -
+              priority                            No - 0
+              Creation of child process           Yes - 1
+ 8.       J                                                           -            1
+              using fork()                        No - 0
+                                           0 - Exceeded 45
+                                           mins
+                                           0.5 - Completed
+ 9.       J   Time Management              within 30 to 45       -                 1
+                                           mins
+                                           1 - Completed
+                                           within 30 min
+                                           0 - If none of the
+                                           aspect is found
+              Coding Ethics
+                                           0.5 - If exhibiting
+ 10.      J   Proper Indentation                                 -                 1
+                                           any one aspect
+              Overall design look
+                                           1 - If exhibiting
+                                           all two aspects
+                                Total Marks                                   10
+
+
+
+
+                                                                            86 | P a g e
+  Day 06                     Linux Scheduler and Memory Management
+
+
+
+Objective:
+
+To understand the Linux scheduler and memory management in Linux.
+
+Outcomes:
+
+To implement scheduling algorithms and memory management techniques using C
+programming.
+
+Resources Required :         Linux Virtual environment
+
+Safety Precautions     :     Nil
+
+Prerequisites          :     C programming
+
+
+
+Theory:
+
+I. LINUX SCHEDULER
+
+Reference Link:
+
+https://kuleuven-diepenbeek.github.io/osc-course/exercises/
+
+Scheduler has two main responsibilities:
+
+   1. Choose the next task that is allowed to run on a given processor
+
+   2. Dispatching: switching tasks that are running on a given processor
+
+
+
+
+Types of Scheduling:
+Scheduler algorithms
+   1. FCFS
+
+                                                                           87 | P a g e
+    2. SJF
+Pre-emptive scheduling
+    1. Priority-based scheduling
+    2. Round-Robin scheduling
+
+
+Program 1:               Scheduling algorithms - FCFS
+#include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
+int main()
+{
+       int i, n, *bt, *wt, *tat;
+       float avgtat, avgwt;
+       printf("\n Enter the number of processes : ");
+       scanf("%d", &n);
+       bt = (int*)malloc(n*sizeof(int));
+       wt = (int*)malloc(n*sizeof(int));
+       tat = (int*)malloc(n*sizeof(int));
+       printf("\n Enter the burst time for each process \n");
+       for(i=0; i<n; i++)
+       {
+               printf(" Burst time for P%d : ", i);
+               scanf("%d", &bt[i]);
+       }
+       wt[0] = 0;
+       tat[0] = bt[0];
+       for(i=1; i<n; i++)
+       {
+       wt[i] = wt[i-1] + bt[i-1]; //waiting time[p] = waiting time[p-1] + Burst Time[p-1]
+       tat[i] = wt[i] + bt[i];     //Turnaround Time = Waiting Time + Burst Time
+
+                                                                                   88 | P a g e
+    }
+    for(i=0; i<n; i++)
+    {
+            avgwt += wt[i];
+            avgtat += tat[i];
+    }
+    avgwt = avgwt/n;
+    avgtat = avgtat/n;
+    printf("\n PROCESS \t BURST TIME \t WAITING TIME \t TURNAROUND TIME
+    \n");
+    printf("--------------------------------------------------------------\n");
+    for(i=0; i<n; i++)
+    {
+            printf(" P%d \t\t %d \t\t %d \t\t %d \n", i, bt[i], wt[i], tat[i]);
+    }
+    printf("\n Average Waiting Time = %f \n Average Turnaround Time = %f \n", avgwt,
+    avgtat);
+    printf("\n GAANT CHART \n");
+    printf("---------------\n");
+    for(i=0; i<n; i++)
+    {
+            printf(" %d\t|| P%d ||\t%d\n", wt[i], i, tat[i]);
+    }
+}
+
+
+
+
+                                                                                  89 | P a g e
+Output:
+
+
+
+
+II. MEMORY MANAGEMENT:
+In modern computers and embedded systems there is typically a large amount of memory
+available. To be able to read and write to this memory, we need a way to access individual
+units of storage. Memory addresses is used that uniquely identify memory locations.
+
+Reference Link:
+
+https://kuleuven-diepenbeek.github.io/osc-course/exercises/
+
+
+
+Program:
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+int main()
+
+{
+
+                                                                                 90 | P a g e
+      int n,i,*ptr,sum=0;
+
+      printf("Enter number of elements: ");
+
+      scanf("%d",&n);
+
+      ptr=(int*)malloc(n*sizeof(int)); //memory allocated using malloc
+
+      if(ptr==NULL)
+
+      {
+
+              printf("Sorry! unable to allocate memory");
+
+              exit(0);
+
+      }
+
+      printf("Enter elements of array: ");
+
+      for(i=0;i<n;++i)
+
+      {
+
+              scanf("%d",ptr+i);
+
+              sum+=*(ptr+i);
+
+      }
+
+      printf("Sum=%d",sum);
+
+      free(ptr);
+
+      return 0;
+
+}
+
+Output:
+
+
+
+
+                                                                         91 | P a g e
+Schedule:
+
+                                                            1:30 2:20
+          8:45    9:35     10:25   10:40   11:30    12:20                 3:10     3:25
+                                                             pm pm
+ Day/    am to   am to     am to   am to   am to    pm to                pm to    pm to
+                                                              to  to
+ Time     9:35   10:25     10:40   11:30   12:20     1:30                 3:25     4:15
+                                                            2:20 3:10
+           am      am       am      am      pm        pm                   pm       pm
+                                                             pm pm
+
+        Implementation             Implementation
+                       Tea                        Lunch                 Tea   Assess
+  06    of Scheduling                of Dynamic                Task
+                       Break                      Break                 Break -ment
+        algorithm                     Memory
+
+
+
+Description of the task:
+
+Write a C Program to implement priority scheduling using dynamic memory allocation.
+
+
+
+Assessment Pattern:
+
+        Aspect
+ Sl.    Type                              Extra aspect of Requirement Max.
+               Aspect of description
+ No.    (M or                             description     (only for M) marks
+        J)
+               Memory allocation for            Yes – 1
+  1.       J                                                     -       1
+               each process                     No – 0
+                                                Yes – 1
+  2.       J   Calculation of Burst time                         -       1
+                                                No – 0
+               Calculation of waiting           Yes - 1
+  3.       J                                                     -       1
+               time                             No – 0
+               Calculation             of       Yes – 1
+  4.       J                                                     -       1
+               Turnaround time                  No – 0
+               Displaying        average
+                                                Yes - 1
+  5.       J   waiting and turnaround                            -       1
+                                                 No - 0
+               time
+               Implementation          of
+                                                Yes - 1
+  6.       J   dynamic           memory                          -       1
+                                                 No - 0
+               allocation
+               Displaying the output in         Yes - 1                  1
+  7.       J                                                     -
+               table format                      No - 0
+               Displaying the output            Yes - 1
+  8.       J                                                     -       1
+               using Gantt chart                 No - 0
+                                          0 - Exceeded 45
+  9.       J   Time Management                            -              1
+                                          mins
+
+
+
+                                                                              92 | P a g e
+                                  0.5 - Completed
+                                  within 30 to 45
+                                  mins
+                                  1 - Completed
+                                  within 30 min
+                                  0 - If none of the
+                                  aspect is found
+          Coding Ethics
+                                  0.5 - If exhibiting
+10.   J   Proper Indentation                            -         1
+                                  any one aspect
+          Overall design look
+                                  1 - If exhibiting all
+                                  two aspects
+                          Total Marks                        10
+
+
+
+
+                                                            93 | P a g e
+      Day 07          Multithreading and Interthread communication between threads
+
+
+Objective:
+
+To understand the basic concepts of multithreading, creating multi-thread applications and
+managing communication between the threads in Linux.
+
+Outcomes:
+
+To create an application for multiple threads and make interthread communication between
+threads using C programming.
+
+
+
+Resources Required            :      Linux Virtual environment
+
+Safety Precautions            :      Nil
+
+Prerequisites                 :      C programming
+
+
+
+Theory:
+
+I. THREAD
+
+Reference Link:
+
+https://kuleuven-diepenbeek.github.io/osc-course/exercises/
+
+
+
+Pthread library and thread Function
+
+1. Header file
+
+Include the header file pthread.h.
+
+       #include <pthread.h>
+
+2. The ID of a thread
+
+Each thread has an object of type pthread_t associated with it that tells its ID. The same
+pthread_t object cannot be used by multiple threads simultaneously. For multiple threads, an
+array can be created where pthread_t id[2];each element is an ID for a separate thread:
+
+       pthread_t id[2];
+
+
+                                                                                 94 | P a g e
+3. Creating Pthread
+
+A thread is created and starts using the function pthread_create(). It takes four parameters:
+
+
+      Name                   Type                             Description
+
+
+        ID             pthread_t *      Reference (or pointer) to the ID of the thread.
+
+
+                                        Used to set the attributes of a thread(e.g., the stack
+                     pthread_attr_t
+    Attributes                          size, scheduling policy, etc.) Passing NULL suffices
+                           *
+                                        for most applications.
+
+
+                                        The name of the function that the thread starts to
+     Starting                           execute. If the function’s return type is void *, then its
+                         void *
+     routine                            name is simply written; otherwise, it has to be type-
+                                        cast to void *.
+
+
+                                        This is the argument that the starting routine takes. If
+    Arguments            void *
+                                        it takes multiple arguments, a struct is used.
+
+The return type of a starting routine and its argument is usually set to void *.
+
+        pthread_create(&id[0], NULL, printNumber, &arg);
+
+
+
+4. Exiting a thread
+
+pthread_exit() is used to exit a thread. This function is usually written at the end of the starting
+routine. If a value is returned by a thread upon ending, its reference is passed as an argument.
+Since a thread’s local variables are destroyed when they exit, only references to global or
+dynamic variables are returned.
+
+Program:
+
+// Global variable:
+int i = 1;
+// Starting routine:
+void* foo(void* p)
+
+{
+        int i = *(int*) p;
+
+
+                                                                                        95 | P a g e
+       printf("Received value: %i", i);
+
+       pthread_exit(&i);    // Return reference to global variable
+}
+
+
+
+5. Waiting for a thread
+
+A parent thread is made to wait for a child thread using pthread_join(). The two parameters of
+this function are:
+
+
+       Name                Type                             Description
+
+
+     Thread ID          pthread_t      The ID of the thread that the parent thread waits for.
+
+
+    Reference to                       The value returned by the exiting thread is caught by
+                        void **
+    return value                       this pointer.
+
+
+       int* ptr;
+       pthread_join(id, &ptr);
+
+
+
+6. pthread Attributes
+
+Threads can be assigned various thread attributes at the time of thread creation. This is
+controlled through the second argument to pthread_create(). First pass the pthread_attr_t
+variable through the following code.
+
+       int pthread_attr_init(pthread_attr_t *attr);
+
+
+
+7. Compiling Multithreaded Programs
+
+To compile a multithreaded program using gcc, we need to link it with the pthreads library.
+Following is the command used to compile the program.
+
+       gcc filename.c –lpthread // gcc myProgram.o -o myProgram -lpthread
+
+       ./a.out
+
+
+
+
+                                                                                     96 | P a g e
+Program 1:        Simple Mutltithread Program
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <pthread.h>
+
+#define NUM_THREADS 2
+
+typedef struct _thread_data_t
+
+{
+
+       int tid;
+
+       double stuff;
+
+} thread_data_t;
+
+void *thr_func(void *arg)
+
+{
+
+       thread_data_t *data = (thread_data_t *)arg;
+
+       printf("hello from thr_func, thread id: %d\n", data->tid);
+
+       pthread_exit(NULL);
+
+}
+
+int main(int argc, char **argv)
+
+{
+
+       pthread_t thr[NUM_THREADS];
+
+       int i, rc;
+
+       thread_data_t thr_data[NUM_THREADS];
+
+       for (i = 0; i < NUM_THREADS; ++i)
+
+       {
+
+                  thr_data[i].tid = i;
+
+                  if ((rc = pthread_create(&thr[i], NULL, thr_func, &thr_data[i])))
+
+                  {       fprintf(stderr, "error: pthread_create, rc: %d\n", rc);
+
+
+                                                                                      97 | P a g e
+                       return EXIT_FAILURE;                         }
+
+         }
+
+         for (i = 0; i < NUM_THREADS; ++i)
+
+         {
+
+                pthread_join(thr[i], NULL);
+
+         }
+
+    return EXIT_SUCCESS;
+
+}
+
+Output:
+
+
+
+
+Program description:
+
+C-program that has 4 threads (in addition to the main thread). Each thread calculates all prime
+numbers between a lower and larger limit. Given a maximum number N which is divisible by
+4 (e.g., 100000):
+
+     •   Thread 1 computes all primes between 2 and N/4
+
+     •   Thread 2 computes all primes between N/4 + 1 and N/2
+
+     •   Thread 3 computes all primes between N/2 + 1 and 3N/4
+
+     •   Thread 4 computes all primes between 3N/4 + 1 and N
+
+
+
+                                                                                   98 | P a g e
+    •   Make sure you pass these limits properly to the threads as function parameters. Think
+        about how you can pass more than 1 parameter!
+
+Sample Code:
+
+#include<stdio.h>
+
+#include<pthread.h>
+
+#define N 1000
+
+#define MAX_THREADS 4
+
+int prime_arr[N]={0};
+
+void *printprime(void *ptr)
+
+{
+
+        int j,flag;
+
+        int i=(int)(long long int)ptr;
+
+        for(i=2;i<N;i++)
+
+        {
+
+                flag=0;
+
+                for(j=2;j<=i/2;j++)
+
+                {
+
+                          if(i%j==0)
+
+                          {      flag=1;
+
+                                 break;      }
+
+                }
+
+                if(flag==0)
+
+                {         prime_arr[i]=1;    }
+
+        }
+
+}
+
+
+
+
+                                                                                  99 | P a g e
+int main()
+
+{
+
+       pthread_t tid[MAX_THREADS]={{0}};
+
+       int count=0;
+
+       for(count=0;count<MAX_THREADS;count++)
+
+       {       printf("\r\n CREATING THREADS %d",count);
+
+               pthread_create(&tid[count],NULL,printprime,(void*)count);
+
+       }
+
+       printf("\n");
+
+       for(count=0;count<MAX_THREADS;count++)
+
+       {       pthread_join(tid[count],NULL);     }
+
+       int c=0;
+
+       for(count=0;count<N;count++)
+
+       if(prime_arr[count]==1)
+
+       printf("%d ",count);
+
+       return 0;
+
+}
+
+Output:
+
+
+
+
+                                                                           100 | P a g e
+II. INTERTHREAD COMMUNICATION:
+
+       pthread Mutexes
+
+       int    pthread_mutex_init(pthread_mutex_t       *mutex,     const   pthread_mutexattr_t
+       *mutexattr);
+
+
+
+The pthread_mutex_init() function requires a pthread_mutex_t variable to operate on as the
+first argument. Attributes for the mutex can be given through the second parameter. To specify
+default attributes, pass NULL as the second parameter. Alternatively, mutexes can be
+initialized to default values through a convenient macro rather than a function call:
+
+                  pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+
+
+
+To perform mutex locking and unlocking, the pthreads provides the following functions:
+
+       int pthread_mutex_lock(pthread_mutex_t *mutex);
+
+       int pthread_mutex_trylock(pthread_mutex_t *mutex);
+
+       int pthread_mutex_unlock(pthread_mutex_t *mutex);
+
+
+
+Program 1:
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <pthread.h>
+
+#define NUM_THREADS 5
+
+typedef struct _thread_data_t {
+
+       int tid;
+
+       double stuff;
+
+} thread_data_t;
+
+double shared_x;
+
+pthread_mutex_t lock_x;
+
+
+                                                                                   101 | P a g e
+void *thr_func(void *arg)
+
+{
+
+      thread_data_t *data = (thread_data_t *)arg;
+
+      printf("hello from thr_func, thread id: %d\n", data->tid);
+
+      pthread_mutex_lock(&lock_x);
+
+      shared_x += data->stuff;
+
+      printf("x = %f\n", shared_x);
+
+      pthread_mutex_unlock(&lock_x);
+
+      pthread_exit(NULL);
+
+}
+
+int main(int argc, char **argv)
+
+{
+
+      pthread_t thr[NUM_THREADS];
+
+      int i, rc;
+
+      thread_data_t thr_data[NUM_THREADS];
+
+      shared_x = 0;
+
+      pthread_mutex_init(&lock_x, NULL);
+
+      for (i = 0; i < NUM_THREADS; ++i)
+
+      {
+
+               thr_data[i].tid = i;
+
+               thr_data[i].stuff = (i + 1) * NUM_THREADS;
+
+               if ((rc = pthread_create(&thr[i], NULL, thr_func, &thr_data[i])))
+
+               {
+
+                       fprintf(stderr, "error: pthread_create, rc: %d\n", rc);
+
+                       return EXIT_FAILURE;
+
+               }
+
+
+                                                                                   102 | P a g e
+      }
+
+      for (i = 0; i < NUM_THREADS; ++i)
+
+      {
+
+            pthread_join(thr[i], NULL);
+
+      }
+
+      return EXIT_SUCCESS;
+
+}
+
+Output:
+
+
+
+
+                                          103 | P a g e
+Schedule:
+
+                                                                         2:20
+         8:45       9:35   10:25   10:40     11:30   12:20      1:30             3:10     3:25
+ Day/                                                                     pm
+        am to      am to   am to   am to     am to   pm to     pm to            pm to    pm to
+ Tim                                                                       to
+         9:35      10:25   10:40   11:30     12:20    1:30      2:20             3:25     4:15
+  e                                                                      3:10
+          am         am     am      am        pm       pm        pm               pm       pm
+                                                                          pm
+
+                                   Implementation        Communication
+        Implementation Tea                         Lunch                Tea   Assess
+  07                                of Multithread       between thread
+        of Multithread Break                       Break                Break ment
+                                       & Task               & Task
+
+
+
+Description of the task:
+
+Task Name:             Producer Consumer problem
+
+We have two processes, producer and consumer, who share a fixed size buffer. Producer work
+is to produce data or items and put them in a buffer. Consumer work is to remove data from a
+buffer and consume it. We have to make sure that producers do not produce data when the
+buffer is full and consumers do not remove data when the buffer is empty.
+
+
+
+Assessment Pattern:
+
+         Aspect
+ Sl.                                             Extra aspect of       Requirement      Max.
+         Type         Aspect of description
+ No.                                              description          (only for M)     marks
+        (M or J)
+                    Creation of new script           Yes - 1
+  1.        J                                                               -             1
+                    file                             No - 0
+
+                    Implementation of                Yes - 1
+  2.        J                                                               -             1
+                    Thread                           No – 0
+
+                                                     Yes – 1
+  3.        J       Creating Pthread()                                      -             1
+                                                     No – 0
+
+                                                     Yes – 1
+  4.        J       Create Thread ID                                        -             1
+                                                     No – 0
+
+                                                     Yes – 1
+  5.        J       Create Producer function                                -             1
+                                                     No – 0
+
+                    Create Consumer                  Yes – 1
+  6.        J                                                               -             1
+                    Function                         No – 0
+
+                                                                                  104 | P a g e
+          Join the Threads both       Yes – 1
+7.    J                                         -         1
+          producer and Consumer       No – 0
+
+          Communication between       Yes – 1
+8.    J                                         -         1
+          Producer and Consumer       No – 0
+
+          Show case output in         Yes – 1
+9.    J                                         -         1
+          Command Line                No – 0
+
+                                      Yes – 1
+10.   J   Time Management                       -         1
+                                      No – 0
+
+                        Total Marks                       10
+
+
+
+
+                                                    105 | P a g e
+       DAY 08          Data sharing between multiple processes using IPC mechanism
+
+
+
+
+Objective:
+
+The aim of the task is to provide adequate knowledge in communication of one process with
+another process using different mechanisms like PIPE, FIFO, Message Queue and Shared
+Memory.
+
+Outcome:
+
+At the end of the task, students can understand the fundamental concepts of Inter process
+Communication and can implement a C program for sharing messages between two processes.
+
+
+
+Resources required:
+
+   ▪    Linux OS
+
+   ▪    C Compiler
+
+Safety Precautions            :       Nil
+
+Prerequisites                 :       Nil
+
+
+
+Theory:
+
+INTER PROCESS COMMUNICATION
+
+Inter Process Communication (IPC) is a mechanism that involves communication of one
+process with another process. This usually occurs only in one system.
+
+1. Pipes
+
+Communication between two related processes. The mechanism is half duplex meaning the
+first process communicates with the second process. To achieve a full duplex i.e., for the second
+process to communicate with the first process another pipe is required.
+
+Reference Link:
+https://www.tutorialspoint.com/inter_process_communication/inter_process_communication
+_pipes.htm
+
+
+                                                                                    106 | P a g e
+Program:
+
+#include<stdio.h>
+
+#include<unistd.h>
+
+#include<sys/types.h>
+
+#include<sys/wait.h>
+
+int main()
+
+{
+
+        int fd[2],n;
+
+        char buffer[100];
+
+        pid_t p;
+
+        pipe(fd); //creates a unidirectional pipe with two end fd[0] and fd[1]
+
+        p=fork();
+
+        if(p>0) //parent
+
+        {
+
+              printf("Parent Passing value to child\n");
+
+              write(fd[1],"hello\n",6); //fd[1] is the write end of the pipe
+
+              wait(NULL);
+
+        }
+
+        else // child
+
+        {
+
+              printf("Child printing received value\n");
+
+              n=read(fd[0],buffer,100); //fd[0] is the read end of the pipe
+
+              write(1,buffer,n);
+
+        }
+
+}
+
+
+
+
+                                                                                 107 | P a g e
+Output:
+
+
+
+
+(i) Two-way Communication Using Pipes:
+
+Pipe communication is viewed as only one-way communication i.e., either the parent process
+writes and the child process reads or vice-versa but not both. However, what if both the parent
+and the child needs to write and read from the pipes simultaneously, the solution is a two-way
+communication using pipes. Two pipes are required to establish two-way communication.
+
+Program:
+
+#include<stdio.h>
+
+#include<unistd.h>
+
+int main()
+
+{
+
+       int pipefds1[2], pipefds2[2];
+
+       int returnstatus1, returnstatus2;
+
+       int pid;
+
+       char pipe1writemessage[20] = "Hi";
+
+       char pipe2writemessage[20] = "Hello";
+
+       char readmessage[20];
+
+       returnstatus1 = pipe(pipefds1);
+
+
+
+                                                                                  108 | P a g e
+       if (returnstatus1 == -1)
+
+       {
+
+                      printf("Unable to create pipe 1 \n");
+
+                      return 1;
+
+           }
+
+           returnstatus2 = pipe(pipefds2);
+
+           if (returnstatus2 == -1) {
+
+                      printf("Unable to create pipe 2 \n");
+
+                      return 1;
+
+           }
+
+           pid = fork();
+
+           if (pid != 0)
+
+           { // Parent process
+
+                      close(pipefds1[0]);    // Close the unwanted pipe1 read side
+
+                      close(pipefds2[1]);    // Close the unwanted pipe2 write side
+
+                      printf("In Parent: Writing to pipe 1 – Message is %s\n",
+                      pipe1writemessage);
+
+                      write(pipefds1[1], pipe1writemessage, sizeof(pipe1writemessage));
+
+                      read(pipefds2[0], readmessage, sizeof(readmessage));
+
+                      printf("In Parent: Reading from pipe 2 – Message is %s\n",
+                      readmessage);
+
+               }
+
+else
+
+{ //child process
+
+               close(pipefds1[1]); // Close the unwanted pipe1 write side
+
+               close(pipefds2[0]); // Close the unwanted pipe2 read side
+
+               read(pipefds1[0], readmessage, sizeof(readmessage));
+
+                                                                                 109 | P a g e
+              printf("In Child: Reading from pipe 1 – Message is %s\n", readmessage);
+
+              printf("In Child: Writing to pipe 2 – Message is %s\n", pipe2writemessage);
+
+              write(pipefds2[1], pipe2writemessage, sizeof(pipe2writemessage));
+
+       }
+
+return 0;
+
+}
+
+Output:
+
+
+
+
+2. FIFO (Named Pipes):
+
+Communication between two unrelated processes. FIFO is a full duplex, meaning the first
+process can communicate with the second process and vice versa at the same time.
+
+Link for FIFO :
+
+https://www.tutorialspoint.com/inter_process_communication/inter_process_communication
+_named_pipes.htm
+
+
+
+Program:      FIFO Server Code
+
+#include <stdio.h>
+
+#include <string.h>
+
+#include <fcntl.h>
+
+#include <sys/stat.h>
+
+#include <sys/types.h>
+
+
+                                                                               110 | P a g e
+#include <unistd.h>
+
+int main()
+
+{
+
+       int fd;
+
+       // FIFO file path
+
+       char * myfifo = "/tmp/myfifo";
+
+       // Creating the named file(FIFO)
+
+       // mkfifo(<pathname>, <permission>)
+
+       mkfifo(myfifo, 0666);
+
+       char arr1[80], arr2[80];
+
+       while (1)
+
+       {
+
+                 // Open FIFO for write only
+
+                 fd = open(myfifo, O_WRONLY);
+
+                 // Take an input arr2ing from user.
+
+                 // 80 is maximum length
+
+                 fgets(arr2, 80, stdin);
+
+                 // Write the input arr2ing on FIFO and close it
+
+                 write(fd, arr2, strlen(arr2)+1);
+
+                 close(fd);
+
+                 // Open FIFO for Read only
+
+                 fd = open(myfifo, O_RDONLY);
+
+                 // Read from FIFO
+
+                 read(fd, arr1, sizeof(arr1));
+
+                 // Print the read message
+
+                 printf("User2: %s\n", arr1);
+
+
+                                                                   111 | P a g e
+                  close(fd);
+
+       }
+
+return 0;
+
+}
+
+
+
+Program:          FIFO Client Code
+
+#include <stdio.h>
+
+#include <string.h>
+
+#include <fcntl.h>
+
+#include <sys/stat.h>
+
+#include <sys/types.h>
+
+#include <unistd.h>
+
+int main()
+
+{
+
+       int fd1;
+
+       // FIFO file path
+
+       char * myfifo = "/tmp/myfifo";
+
+       // Creating the named file(FIFO)
+
+       // mkfifo(<pathname>,<permission>)
+
+       mkfifo(myfifo, 0666);
+
+       char str1[80], str2[80];
+
+        while (1)
+
+       {
+
+                  // First open in read only and read
+
+                  fd1 = open(myfifo,O_RDONLY);
+
+                  read(fd1, str1, 80);
+
+
+                                                        112 | P a g e
+               // Print the read string and close
+
+               printf("User1: %s\n", str1);
+
+               close(fd1);
+
+               // Now open in write mode and write
+
+               // string taken from user.
+
+               fd1 = open(myfifo,O_WRONLY);
+
+               fgets(str2, 80, stdin);
+
+               write(fd1, str2, strlen(str2)+1);
+
+               close(fd1);
+
+       }
+
+return 0;
+
+}
+
+Output:
+
+
+
+
+3. Message Queues
+
+Communication between two or more processes with full duplex capacity. The processes will
+communicate with each other by posting a message and retrieving it out of the queue. Once
+retrieved, the message is no longer available in the queue.
+
+Reference Link:
+
+https://www.tutorialspoint.com/inter_process_communication/inter_process_communication
+_message_queues.htm
+
+
+                                                                             113 | P a g e
+Program:        Sender code
+
+#include<stdlib.h>
+
+#include<stdio.h>
+
+#include<string.h>
+
+#include<unistd.h>
+
+#include<sys/types.h>
+
+#include<sys/ipc.h>
+
+#include<sys/msg.h>
+
+#define MAX_TEXT 512 //maximum length of the message that can be sent allowed
+
+struct my_msg{
+
+         long int msg_type;
+
+         char some_text[MAX_TEXT];
+
+};
+
+int main()
+
+{
+
+         int running=1;
+
+         int msgid;
+
+         struct my_msg some_data;
+
+         char buffer[50]; //array to store user input
+
+         msgid=msgget((key_t)14534,0666|IPC_CREAT);
+
+         if (msgid == -1) // -1 means the message queue is not created
+
+         {
+
+                printf("Error in creating queue\n");
+
+                exit(0);
+
+     }
+
+
+
+
+                                                                         114 | P a g e
+     while(running)
+
+     {
+
+                printf("Enter some text:\n");
+
+                fgets(buffer,50,stdin);
+
+                some_data.msg_type=1;
+
+                strcpy(some_data.some_text,buffer);
+
+                if(msgsnd(msgid,(void *)&some_data, MAX_TEXT,0)==-1)
+
+                // msgsnd returns -1 if the message is not sent
+
+                {
+
+                       printf("Msg not sent\n");
+
+                }
+
+         if(strncmp(buffer,"end",3)==0)
+
+         {      running=0;                      }
+
+     }
+
+}
+
+
+
+Program:        Receiver code
+
+#include<stdlib.h>
+
+#include<stdio.h>
+
+#include<string.h>
+
+#include<unistd.h>
+
+#include<sys/types.h>
+
+#include<sys/ipc.h>
+
+#include<sys/msg.h>
+
+struct my_msg{
+
+         long int msg_type;
+
+
+                                                                       115 | P a g e
+     char some_text[BUFSIZ];
+
+};
+
+int main()
+
+{
+
+       int running=1;
+
+       int msgid;
+
+       struct my_msg some_data;
+
+       long int msg_to_rec=0;
+
+       msgid=msgget((key_t)14534,0666|IPC_CREAT);
+
+       while(running)
+
+       {
+
+              msgrcv(msgid,(void *)&some_data,BUFSIZ,msg_to_rec,0);
+
+              printf("Data received: %s\n",some_data.some_text);
+
+              if(strncmp(some_data.some_text,"end",3)==0)
+
+              {             running=0;                             }
+
+       }
+
+msgctl(msgid,IPC_RMID,0);
+
+}
+
+Output:
+
+
+
+
+                                                                       116 | P a g e
+4. Shared Memory
+
+Communication between two or more processes is achieved through a shared piece of memory
+among all processes. The shared memory needs to be protected from each other by
+synchronizing access to all the processes.
+
+Resource Link :
+
+https://www.tutorialspoint.com/inter_process_communication/inter_process_communication
+_shared_memory.htm
+
+
+
+Program:        Writer code
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#include<unistd.h>
+
+#include<sys/shm.h>
+
+#include<string.h>
+
+int main()
+
+{
+
+       int i;
+
+       void *shared_memory;
+
+       char buff[100];
+
+       int shmid;
+
+       shmid=shmget((key_t)2345, 1024, 0666|IPC_CREAT);
+
+       /* creates shared memory segment with key 2345, having size 1024 bytes. IPC_CREAT
+       is used to create the shared segment if it does not exist. 0666 are the permisions on the
+       shared segment */
+
+       printf("Key of shared memory is %d\n",shmid);
+
+       shared_memory=shmat(shmid,NULL,0); //process attached to shared memory segment
+
+       printf("Process attached at %p\n",shared_memory);
+
+
+                                                                                   117 | P a g e
+       //this prints the address where the segment is attached with this process
+
+       printf("Enter some data to write to shared memory\n");
+
+       read(0,buff,100); //get some input from user
+
+       strcpy(shared_memory,buff); //data written to shared memory
+
+       printf("You wrote : %s\n",(char *)shared_memory);
+
+}
+
+Program:        Reader code
+
+#include<stdio.h>
+
+#include<stdlib.h>
+
+#include<unistd.h>
+
+#include<sys/shm.h>
+
+#include<string.h>
+
+int main()
+
+{
+
+       int i;
+
+       void *shared_memory;
+
+       char buff[100];
+
+       int shmid;
+
+       shmid=shmget((key_t)2345, 1024, 0666);
+
+       printf("Key of shared memory is %d\n",shmid);
+
+       shared_memory=shmat(shmid,NULL,0); //process attached to shared memory segment
+
+       printf("Process attached at %p\n",shared_memory);
+
+       printf("Data read from shared memory is : %s\n",(char *)shared_memory);
+
+}
+
+
+
+
+                                                                                   118 | P a g e
+Output:
+
+
+
+
+          119 | P a g e
+Schedule
+
+                                                                       2:20
+         8:45       9:35   10:25   10:40     11:30   12:20    1:30             3:10     3:25
+ Day/                                                                   pm
+        am to      am to   am to   am to     am to   pm to   pm to            pm to    pm to
+ Tim                                                                     to
+         9:35      10:25   10:40   11:30     12:20    1:30    2:20             3:25     4:15
+  e                                                                    3:10
+          am         am     am      am        pm       pm      pm               pm       pm
+                                                                        pm
+
+        Understand the
+                             Implementation
+        basic IPC and                             Implementation
+                       Tea    of FIFO and Lunch                  Tea   Assess
+  08    Implementation                              of Shared
+                       Break    Message     Break                Break ment
+        of        PIPE                               Memory
+                                 Queue
+        Concept
+
+
+
+Description of the task:
+
+Task 1: Implement a program to PIPE for one-way and two-way communication
+
+Task 2: Implementation of IPC using FIFO (Named PIPE’S) between two processes
+
+Task 3: Implementation of IPC using Message queue
+
+Task 4: Implementation of IPC using Shared Memory
+
+
+
+Assessment Pattern:
+
+         Aspect
+ Sl.                                            Extra aspect of      Requirement      Max.
+         Type        Aspect of description
+ No.                                             description         (only for M)     marks
+        (M or J)
+                    Declaration of file             Yes - 1
+  1.       J                                                              -             1
+                    path                            No - 0
+                                                  One-way
+                    Implementation of
+                                               Implemented- 0.5
+                    PIPE
+  2.       J                                      Two-way                 -             1
+                    a.    One-way
+                                               Implemented- 0.5
+                    a.    Two-way
+                                                    No - 0
+                    Implementation of
+                    FIFO                       Client only - 0.5
+  3.       J        a.    Client program       Server only - 0.5          -             1
+                    a.    Server                    No - 0
+                    program
+                    Implementation of
+                    MessageQueue               Client only - 0.5
+  4.       J        a.    Client program       Server only - 0.5          -             1
+                    a.    Server                    No - 0
+                    program
+
+                                                                                120 | P a g e
+          Implementation of
+          Shared Memory           Client only - 0.5
+5.    J   a.     Client program   Server only - 0.5   -         1
+          a.     Server           No - 0
+          program
+          Display the output of        Yes - 1
+6.    J                                               -         1
+          PIPE                         No - 0
+          Display the output of        Yes - 1
+7.    J                                               -         1
+          FIFO                         No - 0
+          Display the output           Yes - 1
+8.    J                                               -         1
+          MessageQueue                 No - 0
+          Display the output           Yes - 1
+9.    J                                               -         1
+          of Shared Memory             No - 0
+                                  Time
+          Time Management         management – 0.5
+10.   J                                               -         1
+          and Code Ethics         Code Ethics – 0.5
+                                  No – 0
+                       Total Marks                              10
+
+
+
+
+                                                          121 | P a g e
+                       Linux Networking commands – Developing Client server-based
+     Day 09
+                                         networking application
+
+
+
+
+Objective:
+
+To understand the concepts of networking in Linux environment.
+
+Outcomes:
+
+To maintain and troubleshoot the network(s) connected to the system and develop client server-
+based application.
+
+
+
+Resources Required           :       Computer system
+
+Safety Precautions           :       Nil
+
+Prerequisites                :
+
+       •     Basic shell commands
+
+       •     Dir & File Commands
+
+       •     System Commands
+
+       •     Misc Commands
+
+
+
+Theory:
+
+▪   Linux is used both in software development and in servers. Most of the devices and
+    embedded systems in the world implement one or the other distribution of Linux.
+
+▪   Networking in computers speaks about networking both within the network and across the
+    internet. A network can be as small and simple as a home network or as complex as a
+    network for a space station.
+
+▪   Networking includes network configuration and troubleshooting.
+
+
+
+
+                                                                                 122 | P a g e
+I. LINUX NETWORKING COMMANDS
+
+Linux networking commands are used extensively to inspect, analyze, maintain, and
+troubleshoot the network connected to the system.
+
+(1)      ifconfig
+
+Linux ifconfig stands for interface configurator. It is one of the most basic commands used in
+network inspection.
+
+ifconfig is used to initialize an interface, configure it with an IP address, and enable or disable
+it. It is also used to display the route and the network interface.
+
+Basic information displayed upon using ifconfig are:
+
+      1. IP address
+
+      2. MAC address
+
+      3. MTU (Maximum Transmission Unit)
+
+Syntax             :     Ifconfig
+
+Example            :     ifconfig lo
+
+
+
+(2)      ip
+
+This is the latest and updated version of the ifconfig command.
+
+Syntax
+
+      1. ip a
+
+      2. ip addr
+
+
+
+(3)      raceroute
+
+Linux traceroute is one of the most useful commands in networking. It is used to troubleshoot
+the network. It detects the delay and determines the pathway to your target.
+
+It basically helps in the following ways:
+
+      1. It provides the names and identifies every device on the path.
+
+      2. It follows the route to the destination
+
+
+                                                                                     123 | P a g e
+      3. It determines where the network latency comes from and reports it
+
+Syntax:
+
+          traceroute <destination>
+
+Example:
+
+          $ traceroute google.com
+
+
+
+(4)       tracepath
+
+      ▪   Linux tracepath is similar to traceroute command. It is used to detect network delays.
+          However, it doesn't require root privileges.
+
+      ▪   It is installed in Ubuntu by default.
+
+      ▪   It traces the route to the specified destination and identifies each hop in it. If your
+          network is weak, it recognizes the point where the network is weak.
+
+Syntax:
+
+          tracepath <destination>
+
+Example:
+
+          tracepath mindmajix.com
+
+
+
+(5)       ping
+
+Linux ping is one of the most used network troubleshooting commands. It basically checks
+for the network connectivity between two nodes.
+
+          ping stands for Packet INternet Groper.
+
+The ping command sends the ICMP echo request to check the network connectivity.
+
+It keeps executing until it is interrupted.
+
+Syntax:
+
+          ping <destination>
+
+
+
+
+                                                                                         124 | P a g e
+Example:
+
+       $ ping google.comnetstat
+
+
+
+(6)    netstat
+
+Linux netstat command refers to the network statistics.
+
+It provides statistical figures about different interfaces which include open sockets, routing
+tables, and connection information.
+
+Syntax:
+
+       netstat
+
+Example:
+
+       netstat -p
+
+       netstat -r
+
+
+
+(7)    SS
+
+Linux ss command is the replacement for netstat command. It is regarded as a much faster
+and more informative command than netstat.
+
+The faster response of ss is possible as it fetches all the information from within the kernel
+userspace.
+
+Syntax:
+
+       ss
+
+This command gives information about all TCP, UDP, and UNIX socket connections.
+
+You can use -t, -u, -x in the command respectively to show TCP/UDP or UNIX sockets.
+
+
+
+(8)    nslookup
+
+Linux nslookup is also a command used for DNS related queries. It is the older version of
+dig.
+
+
+
+
+                                                                                    125 | P a g e
+Syntax:
+
+       nslookup <domainName>
+
+Example:
+
+       nslookup mindmajix.com route
+
+
+
+(9)    route
+
+Linux route command displays and manipulates the routing table existing for your system.
+
+A router is basically used to find the best way to send the packets across to a destination.
+
+Syntax:
+
+       route host
+
+Linux host command displays the domain name for a given IP address and IP address for a
+given hostname. It is also used to fetch DNS lookup for DNS related query.
+
+Example:
+
+       host mindmajix.com
+
+       host 149.77.21.18
+
+
+
+(10)   arp
+
+Linux arp command stands for Address Resolution Protocol. It is used to view and add
+content to the kernel's ARP table.
+
+Syntax:
+
+       arp
+
+
+
+(11)   hostname
+
+Linux hostname is the simple command used to view and set the hostname of a system.
+
+Syntax:
+
+       hostname
+
+                                                                                    126 | P a g e
+(12)   curl and wget
+
+Linux curl and wget commands are used in downloading files from the internet through CLI.
+The curl command has to be used with the option "O" to fetch the file, while the wget
+command is used directly.
+
+Below are the syntax and the example for the two commands.
+
+Example:
+
+       curl -O google.com/doodles/childrens-day-2014-multiple-countries
+
+       wget google.com/doodles/new-years-day-2012
+
+
+
+(13)   whois
+
+Linux whois command is used to fetch all the information related to a website. You can get
+all the information about a website including the registration and the owner information.
+
+Example:
+
+       whois mindmajix.com
+
+
+
+II. TCP AND UDP PROTOCOLS
+
+
+
+TCP
+
+The TCP stands for Transmission Control Protocol. TCP/IP is a commonly used standard for
+transmitting data over networks.
+
+UDP
+
+The UDP stands for User Datagram Protocol. Its working is similar to the TCP as it is also
+used for sending and receiving the message. The main difference is that UDP is a
+connectionless protocol.
+
+
+
+
+                                                                                  127 | P a g e
+1. Developing Client Server Application in Linux
+
+Most of the Net Applications use the Client-Server architecture, which refers to two processes
+or two applications that communicate with each other to exchange some information. One of
+the two processes acts as a client process, and another process acts as a server.
+
+Client Process
+
+This is the process, which typically makes a request for information. After getting the response,
+this process may terminate or may do some other processing.
+
+Server Process
+
+This is the process which takes a request from the clients. After getting a request from the
+client, this process will perform the required processing, gather the requested information, and
+send it to the requestor client. Once done, it becomes ready to serve another client. Server
+processes are always alert and ready to serve incoming requests.
+
+
+
+2. The entire process can be broken down into following steps:
+
+TCP Server:
+
+1. using create(), Create TCP socket.
+
+2. using bind(), Bind the socket to the server address.
+
+
+                                                                                    128 | P a g e
+3. using listen(), put the server socket in a passive mode, where it waits for the client to
+   approach the server to make a connection
+
+4. using accept(), At this point, connection is established between client and server, and they
+   are ready to transfer data.
+
+5. Go back to Step 3.
+
+
+
+TCP Client:
+
+ 1. Create a TCP socket.
+
+ 2. Connect the newly created client socket to server.
+
+
+
+
+                                                                                     129 | P a g e
+TCP Server:
+
+#include <stdio.h>
+
+#include <netdb.h>
+
+#include <netinet/in.h>
+
+#include <stdlib.h>
+
+#include <string.h>
+
+#include <sys/socket.h>
+
+#include <sys/types.h>
+
+#define MAX 80
+
+#define PORT 8080
+
+#define SA struct sockaddr
+
+// Function designed for chat between client and server.
+
+void func(int connfd)
+
+{
+
+       char buff[MAX];
+
+       int n;
+
+       // infinite loop for chat
+
+       for (;;) {
+
+                bzero(buff, MAX);
+
+                // read the message from client and copy it in buffer
+
+                read(connfd, buff, sizeof(buff));
+
+                // print buffer which contains the client contents
+
+                printf("From client: %s\t To client : ", buff);
+
+                bzero(buff, MAX);
+
+                n = 0;
+
+                // copy server message in the buffer
+
+
+                                                                        130 | P a g e
+               while ((buff[n++] = getchar()) != '\n')
+
+               ;
+
+               // and send that buffer to client
+
+               write(connfd, buff, sizeof(buff));
+
+               // if msg contains "Exit" then server exit and chat ended.
+
+               if (strncmp("exit", buff, 4) == 0) {
+
+                          printf("Server Exit...\n");
+
+                          break;
+
+               }
+
+       }
+
+}
+
+
+
+// Driver function
+
+int main()
+
+{
+
+       int sockfd, connfd, len;
+
+       struct sockaddr_in servaddr, cli;
+
+       // socket create and verification
+
+       sockfd = socket(AF_INET, SOCK_STREAM, 0);
+
+       if (sockfd == -1) {
+
+               printf("socket creation failed...\n");
+
+               exit(0);
+
+       }
+
+       else
+
+               printf("Socket successfully created..\n");
+
+       bzero(&servaddr, sizeof(servaddr));
+
+
+                                                                            131 | P a g e
+// assign IP, PORT
+
+servaddr.sin_family = AF_INET;
+
+servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+
+servaddr.sin_port = htons(PORT);
+
+// Binding newly created socket to given IP and verification
+
+if ((bind(sockfd, (SA*)&servaddr, sizeof(servaddr))) != 0) {
+
+        printf("socket bind failed...\n");
+
+        exit(0);
+
+}
+
+else
+
+        printf("Socket successfully binded..\n");
+
+// Now server is ready to listen and verification
+
+if ((listen(sockfd, 5)) != 0) {
+
+        printf("Listen failed...\n");
+
+        exit(0);
+
+}
+
+else
+
+          printf("Server listening..\n");
+
+len = sizeof(cli);
+
+// Accept the data packet from client and verification
+
+connfd = accept(sockfd, (SA*)&cli, &len);
+
+if (connfd < 0) {
+
+        printf("server accept failed...\n");
+
+        exit(0);
+
+}
+
+else
+
+
+                                                               132 | P a g e
+                printf("server accept the client...\n");
+
+       // Function for chatting between client and server
+
+       func(connfd);
+
+       // After chatting close the socket
+
+       close(sockfd);
+
+}
+
+
+
+TCP Client:
+
+#include <arpa/inet.h> // inet_addr()
+
+#include <netdb.h>
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <string.h>
+
+#include <strings.h> // bzero()
+
+#include <sys/socket.h>
+
+#include <unistd.h> // read(), write(), close()
+
+#define MAX 80
+
+#define PORT 8080
+
+#define SA struct sockaddr
+
+void func(int sockfd)
+
+{
+
+       char buff[MAX];
+
+       int n;
+
+       for (;;) {
+
+                bzero(buff, sizeof(buff));
+
+                printf("Enter the string : ");
+
+
+                                                            133 | P a g e
+               n = 0;
+
+               while ((buff[n++] = getchar()) != '\n')
+
+               ;
+
+               write(sockfd, buff, sizeof(buff));
+
+               bzero(buff, sizeof(buff));
+
+               read(sockfd, buff, sizeof(buff));
+
+               printf("From Server : %s", buff);
+
+               if ((strncmp(buff, "exit", 4)) == 0) {
+
+                        printf("Client Exit...\n");
+
+                        break;
+
+               }
+
+       }
+
+}
+
+
+
+int main()
+
+{
+
+        int sockfd, connfd;
+
+        struct sockaddr_in servaddr, cli;
+
+        // socket create and verification
+
+        sockfd = socket(AF_INET, SOCK_STREAM, 0);
+
+        if (sockfd == -1) {
+
+               printf("socket creation failed...\n");
+
+               exit(0);
+
+       }
+
+       else
+
+               printf("Socket successfully created..\n");
+
+
+                                                            134 | P a g e
+           bzero(&servaddr, sizeof(servaddr));
+
+           // assign IP, PORT
+
+           servaddr.sin_family = AF_INET;
+
+           servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+
+           servaddr.sin_port = htons(PORT);
+
+           // connect the client socket to server socket
+
+           if (connect(sockfd, (SA*)&servaddr, sizeof(servaddr)) != 0) {
+
+                   printf("connection with the server failed...\n");
+
+                   exit(0);
+
+           }
+
+           else
+
+                   printf("connected to the server..\n");
+
+           // function for chat
+
+           func(sockfd);
+
+           // close the socket
+
+           close(sockfd);
+
+}
+
+
+
+Compilation:
+
+Server side:
+gcc server.c -o server
+./server
+
+Client side:
+gcc client.c -o client
+./client
+
+
+
+
+                                                                           135 | P a g e
+Output :
+
+Server side:
+
+Socket successfully created..
+
+Socket successfully binded..
+
+Server listening..
+
+server accept the client...
+
+From client: hi
+
+   To client : hello
+
+From client: exit
+
+   To client : exit
+
+Server Exit...
+
+Client side:
+
+Socket successfully created..
+
+connected to the server..
+
+Enter the string : hi
+
+From Server : hello
+
+Enter the string : exit
+
+From Server : exit
+
+Client Exit...
+
+
+
+
+                                136 | P a g e
+Schedule:
+
+      8:45                                                 1:30 2:20
+            9:35        10:25    10:40 11:30      12:20                 3:10
+       am                                                   pm pm
+ Day/      am to        am to    am to am to      pm to                pm to   3:25 pm to
+        to                                                   to  to
+ Time      10:25        10:40    11:30 12:20       1:30                 3:25    4:15 pm
+      9:35                                                 2:20 3:10
+             am          am       am    pm          pm                   pm
+       am                                                   pm pm
+
+        Basic Linux               Establishing         Developing
+                    Tea                          Lunch               Tea   Task
+  09    Networking                  Socket             Client server
+                    Break                        Break               Break Assessment
+        commands                  connection           applications
+
+
+
+Description of the task:
+
+Task 1: Write a program to perform basic networking operations such as finding the IP
+address, network delay etc.
+
+Task 2: Write a Shell script to establish socket connection.
+
+Task 3: Write a Shell script to demonstrate Chat application
+
+
+
+Assessment Pattern:
+
+         Aspect
+ Sl.                                             Extra aspect of   Requirement    Max.
+         Type        Aspect of description
+ No.                                              description      (only for M)   marks
+        (M or J)
+           J        Creation of new script          Yes – 0.5
+  1.                                                                    -           0.5
+                    file                             No - 0
+            J                                        Yes - 1
+  2.                Find IP Address                                     -               1
+                                                     No - 0
+            J       Demonstrate Ping and            Yes – 0.5
+  3.                                                                    -           0.5
+                    traceroute                       No - 0
+            J       Display domain name              Yes - 1
+  4.                                                                    -               1
+                    for given IP address             No - 0
+            J       Shows the working of             Yes - 1
+  5.                                                                    -               1
+                    TCP UDP protocols                No - 0
+            J       Implementation of                Yes - 1
+  6.                                                                    -               1
+                    Socket                           No - 0
+            J       Connect newly created            Yes - 1
+  7.                                                                    -               1
+                    client socket to server          No - 0
+
+                                                                               137 | P a g e
+     J   Shell script to Implement   Yes - 2
+8.                                             -         2
+         TCP client                  No - 0
+     J   Shell script to Implement   Yes - 2
+9.                                             -         2
+         TCP server                  No - 0
+
+                       Total Marks                       10
+
+
+
+
+                                                   138 | P a g e
+TEST PROJECT
+
+
+                            Chat Application Using C Program
+
+
+Description of Task:
+Creating a chat application with the implementation of Multithread, signals and dynamic
+memory allocation and make a communication between the n number of clients using C
+Programming.
+
+Assessment Pattern:
+
+        Aspect                                                                       Maxim
+                                                                       Requirem
+        Type             Aspect                                                       um
+ S.No                                    Extra Aspect of Description      ent
+        (M or          Description                                                   score
+                                                                        M only
+          J)                                                                          (50)
+
+                            Work organization and management
+
+                                        0.5 marks -
+                                        If imported less than the
+                 Logic of the           required
+  1        J                                                              -             2
+                 program                1 mark
+                                        If imported all required
+                                        libraries
+
+                                        1 mark -
+                                        In time
+  2       M      Time management                                          -             2
+                                        0 mark -
+                                        Out of time
+
+                 Code ethics            0 mark -
+                 (i)Indentation         not suited
+  3        J                                                              -             1
+                 (ii)Overall design     1 mark -
+                 Look                   Well suited
+
+                                      Sub-Total                                         5
+
+                                        Create Server
+
+                                        0 marks -
+                 Implement
+                                        If not added
+  6        J     necessary header                                         -             2
+                                        2 mark-
+                 files
+                                        If added
+
+                                        0 marks -
+  7       M      Add Client                                               -             2
+                                        If not Created
+
+
+                                                                              139 | P a g e
+                                 2 mark-
+                                 If created
+
+                                 0 marks -
+                                 If not deleted
+8    J   Delete Client                                           -             2
+                                 2 mark-
+                                 If deleted
+
+                                 0 marks -
+                                 If not deleted
+9    J   Delete Client List                                      -             2
+                                 2 mark-
+                                 If deleted
+
+                                 0 marks -
+         Send message to         Message not reached to client
+10   J                                                           -             2
+         all client              2 mark-
+                                 Message reached to client
+
+                                 2 mark–
+         Display the
+                                 Messages Displayed
+11   J   messages send by                                        -             2
+                                 0 mark-
+         client
+                                 Message not Displayed
+
+                                  2 mark–
+         Create Server            If Socket Created
+12   J                                                           -             2
+         Socket                   0 mark-
+                                 If Socket Not Created
+
+                                 0 marks
+         Create Port             if not implemented
+13   J                                                           -             2
+         Number                  2 mark
+                                 if implemented
+
+                                 0 marks
+         Display the Client
+                                 if port not Enabled
+14   J   list added in the                                       -             2
+                                 2 mark
+         client
+                                 if port number Enabled
+
+                                 0 marks
+         Quit all the Client
+                                 if not implemented
+15   J   using Single                                            -             2
+                                 2 marks
+         Command
+                                 if implemented
+
+                                 If yes 3
+         Server execute          Execute success but not wait
+16   J                                                           -             3
+         Successfully            for the client 2
+                                 Not execute 0
+
+                               Sub-Total                                       23
+
+
+
+
+                                                                     140 | P a g e
+                              Create Client
+
+                              0 marks-
+16   M   Dynamic Memory       if not Created                  -             2
+                              2 marks- if Created
+
+                               marks-
+                              if not Thread implemented
+17   J   Create Multi                                         -             2
+                              2 marks- if Thread
+         Thread
+                              Implemented
+
+                              0 marks
+                              if not joined
+18   J   Join Threads                                         -             2
+                              2 marks
+                              if not joined
+
+                              0 marks-
+         Create Client
+19   J                        if not Created                  -             2
+         Socket
+                              2 marks- if Created
+
+                              0 marks-
+         Chat Read from
+20   J                        if not Created                  -             2
+         Server
+                              2 marks- if Created
+
+
+                               marks-
+         Write Chat to the
+21   J                        if not implemented              -             2
+         Server
+                              2 marks- if Implemented
+
+                              0 marks
+         Unexpected
+                              if error not handled
+22   J   Server Error                                         -             2
+                              2 marks
+         Handling
+                              if error handled
+
+                               2 marks
+                               If correctly executed and
+         Execute the Client    connected with server
+23   J                                                        -             2
+         Program               0 mark
+                              if not executed and connected
+                              with server
+
+                              0 marks-
+         Create Multiple      if not Created
+24   M                                                        -             2
+         Clients              2 marks- if Created multiple
+                              clients
+
+                              0 marks-
+         Communicate
+                              if not Created
+25   J   Between Client                                       -             2
+                              2 marks- if Created and
+         Through Server
+                              communicated with different
+
+
+                                                                  141 | P a g e
+                               clients
+
+                               0 marks-
+         Client quit from      if not quit properly
+26   J                                                                   2
+         server                2 marks- if client quits from
+                               server
+
+                            Sub – Total                                  22
+
+                        TOTAL MARKS                                      50
+
+
+
+
+                                                               142 | P a g e
+143 | P a g e
+

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h> //for string operations
-#include <unistd.h> //NULL constant defined here
+#include <string.h> 
+#include <unistd.h> 
 #include <sys/types.h>
 #include <sys/socket.h> //for sockets
 #include <netinet/in.h> //Internet Protocol family sockaddr_in defined here
@@ -13,8 +13,8 @@
 #define MAXDATALEN 256
 
 int sockfd;
-int n,x; /*variables for socket*/
-struct sockaddr_in serv_addr; /* structure to hold server's address */
+int n,x; 
+struct sockaddr_in serv_addr; 
 char buffer[MAXDATALEN];
 char buf[10];
 
@@ -104,15 +104,15 @@ if(strncmp(buffer,"quit",4)==0)
 exit(0);
 
 bzero(buffer,MAXDATALEN);
-}//while ends
+}
 }
 
-void *quitproc(){ //handling ctrl+d
+void *quitproc(){ 
 printf("\rPLEASE TYPE 'quit' TO EXIT\n");
 
 }
 
-void *zzz(){ //handling ctrl+z
+void *zzz(){ 
 printf("\rPLEASE TYPE 'quit' TO EXIT\n");
 
 }
